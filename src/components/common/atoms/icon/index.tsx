@@ -18,6 +18,13 @@ export interface IconProps {
   disabled?: boolean;
 }
 
+/**
+ * @param name - 아이콘 이름.
+ * @param size - 아이콘 사이즈.
+ * @param fill - 아이콘 색상.
+ * @param disabled - 아이콘  disabled 색상 적용.
+ */
+
 const Icon: FC<IconProps> = (props) => {
   return <span className={cx("icon")}>{getElement(props)}</span>;
 };
