@@ -1,11 +1,19 @@
+"use client";
 import classnames from "classnames/bind";
 import styles from "./index.module.scss";
 import Icon, { IconOption } from "@atoms/icon";
 import Button, { ButtonOption } from "@atoms/button";
 import Text, { TextOption } from "@atoms/text";
 import Badge, { BadgeOption } from "@atoms/badge";
+import Fennel, { useFennel } from "@atoms/Fennel";
 
 const cx = classnames.bind(styles);
+
+const FennelItemss = ({ step }: { step: number }) => {
+  const { nextStep } = useFennel();
+
+  return <button onClick={nextStep}>스텝:{step}</button>;
+};
 
 const Test = () => {
   return (
@@ -41,6 +49,25 @@ const Test = () => {
       </Text>
       <h1>Badge</h1>
       <Badge backgroundColor={BadgeOption.backgroundColor.accent_cyan_default}>뱃지</Badge>
+
+      <Fennel>
+        <Fennel.Item>
+          <FennelItemss step={1} />
+        </Fennel.Item>
+        <Fennel.Item>
+          <FennelItemss step={2} />
+        </Fennel.Item>
+        <Fennel.Item>
+          <FennelItemss step={3} />
+          <FennelItemss step={3} />
+        </Fennel.Item>
+        <Fennel.Item>
+          <FennelItemss step={4} />
+        </Fennel.Item>
+        <Fennel.Item>
+          <FennelItemss step={5} />
+        </Fennel.Item>
+      </Fennel>
     </div>
   );
 };
