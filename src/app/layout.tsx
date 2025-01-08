@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@styles/reset.scss";
 import localFont from "next/font/local";
-import QueryClientProvider from "@components/layout/QueryClientProviders";
+import QueryClientProvider from "@components/common/layout/QueryClientProviders";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 
 /**
  * @doc https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#local-fonts
+ * @description 로컬 폰트 사용하기
  * */
 
 const pretendard = localFont({
