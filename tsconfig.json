@@ -24,9 +24,9 @@
       "@utils/*": ["./src/utils/*"],
       "@svg/*": ["./src/components/common/atoms/icon/svg/*"],
       "@atoms/*": ["./src/components/common/atoms/*"],
-      "@*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

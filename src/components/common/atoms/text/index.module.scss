@@ -1,0 +1,7 @@
+@import "@styles/common.scss";
+
+@for $i from 1 through 10 {
+  .ellipsis-#{$i} {
+    @include ellipsis($i);
+  }
+}

@@ -7,3 +7,22 @@
 @import "./variables/radius.scss";
 @import "./variables/space.scss";
 @import "./variables/textColor.scss";
+
+@mixin ellipsis($LINE: 1, $LINE_HEIGHT: 1.2em) {
+  @if ($LINE == 1) {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $LINE;
+    -webkit-box-orient: vertical;
+    height: fit-content; // webkit 이외의 브라우저 대응
+    line-height: $LINE_HEIGHT;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}
