@@ -1,4 +1,4 @@
-import ColorType from "@atoms/types/color/ColorType";
+import ColorType from "@constant/color/ColorType";
 
 export enum IconSizeType {
   XS = "XS",
