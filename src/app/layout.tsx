@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@styles/reset.scss";
 import localFont from "next/font/local";
+import QueryClientProvider from "@components/layout/QueryClientProviders";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,9 @@ const pretendard = localFont({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='ko' className={pretendard.className}>
-      <body>{children}</body>
+      <body>
+        <QueryClientProvider>{children}</QueryClientProvider>
+      </body>
     </html>
   );
 };
