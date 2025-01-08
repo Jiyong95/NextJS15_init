@@ -1,0 +1,413 @@
+@import "./colors.scss";
+$color_fill_brand_default: "fill_brand_default";
+$color_fill_brand_subtle_default: "fill_brand_subtle_default";
+$color_fill_brand_strong_default: "fill_brand_strong_default";
+$color_fill_neutral_default: "fill_neutral_default";
+$color_fill_neutral_subtle_default: "fill_neutral_subtle_default";
+$color_fill_neutral_strong_default: "fill_neutral_strong_default";
+$color_fill_success_default: "fill_success_default";
+$color_fill_success_strong_default: "fill_success_strong_default";
+$color_fill_danger_default: "fill_danger_default";
+$color_fill_danger_strong_default: "fill_danger_strong_default";
+$color_fill_warning_default: "fill_warning_default";
+$color_fill_warning_strong_default: "fill_warning_strong_default";
+$color_fill_information_default: "fill_information_default";
+$color_fill_information_strong_default: "fill_information_strong_default";
+
+// accent
+$color_fill_accent_default: "fill_accent_default";
+$color_fill_accent_green_default: "fill_accent_green_default";
+$color_fill_accent_green_strong_default: "fill_accent_green_strong_default";
+$color_fill_accent_springgreen_default: "fill_accent_springgreen_default";
+$color_fill_accent_springgreen_strong_default: "fill_accent_springgreen_strong_default";
+$color_fill_accent_olivegreen_default: "fill_accent_olivegreen_default";
+$color_fill_accent_olivegreen_strong_default: "fill_accent_olivegreen_strong_default";
+$color_fill_accent_yellow_default: "fill_accent_yellow_default";
+$color_fill_accent_yellow_strong_default: "fill_accent_yellow_strong_default";
+$color_fill_accent_gold_default: "fill_accent_gold_default";
+$color_fill_accent_gold_strong_default: "fill_accent_gold_strong_default";
+$color_fill_accent_orange_default: "fill_accent_orange_default";
+$color_fill_accent_orange_strong_default: "fill_accent_orange_strong_default";
+$color_fill_accent_red_default: "fill_accent_red_default";
+$color_fill_accent_red_strong_default: "fill_accent_red_strong_default";
+$color_fill_accent_pink_default: "fill_accent_pink_default";
+$color_fill_accent_pink_strong_default: "fill_accent_pink_strong_default";
+$color_fill_accent_purple_default: "fill_accent_purple_default";
+$color_fill_accent_purple_strong_default: "fill_accent_purple_strong_default";
+$color_fill_accent_violet_default: "fill_accent_violet_default";
+$color_fill_accent_violet_strong_default: "fill_accent_violet_strong_default";
+$color_fill_accent_cobaltblue_default: "fill_accent_cobaltblue_default";
+$color_fill_accent_cobaltblue_strong_default: "fill_accent_cobaltblue_strong_default";
+$color_fill_accent_skyblue_default: "fill_accent_skyblue_default";
+$color_fill_accent_skyblue_strong_default: "fill_accent_skyblue_strong_default";
+$color_fill_accent_cyan_default: "fill_accent_cyan_default";
+$color_fill_accent_cyan_strong_default: "fill_accent_cyan_strong_default";
+$color_fill_accent_teal_default: "fill_accent_teal_default";
+$color_fill_accent_teal_strong_default: "fill_accent_teal_strong_default";
+$color_fill_accent_gray_default: "fill_accent_gray_default";
+$color_fill_accent_gray_strong_default: "fill_accent_gray_strong_default";
+
+@mixin FillStyle($Type: $color_fill_brand_default) {
+  @if $Type == $color_fill_brand_default {
+    background-color: $C_GREEN_25;
+    &:hover {
+      background-color: $C_GREEN_50;
+    }
+    &:active {
+      background-color: $C_GREEN_100;
+    }
+  } @else if $Type == $color_fill_brand_subtle_default {
+    background-color: $C_GRAY_WHITE;
+    &:hover {
+      background-color: $C_GREEN_25;
+    }
+    &:active {
+      background-color: $C_GREEN_50;
+    }
+  } @else if $Type == $color_fill_brand_strong_default {
+    background-color: $C_GREEN_500;
+    &:hover {
+      background-color: $C_GREEN_600;
+    }
+    &:active {
+      background-color: $C_GREEN_700;
+    }
+  } @else if $Type == $color_fill_neutral_default {
+    background-color: $C_GRAY_100;
+    &:hover {
+      background-color: $C_GRAY_200;
+    }
+    &:active {
+      background-color: $C_GRAY_300;
+    }
+  } @else if $Type == $color_fill_neutral_subtle_default {
+    background-color: rgba(51, 52, 54, 0);
+    &:hover {
+      background-color: rgba(51, 52, 54, 0.05) !important;
+    }
+    &:active {
+      background-color: rgba(51, 52, 54, 0.08) !important;
+    }
+  } @else if $Type == $color_fill_neutral_strong_default {
+    background-color: $C_GRAY_500;
+    &:hover {
+      background-color: $C_GRAY_600;
+    }
+    &:active {
+      background-color: $C_GRAY_700;
+    }
+  } @else if $Type == $color_fill_success_default {
+    background-color: $C_GREEN_25;
+    &:hover {
+      background-color: $C_GREEN_50;
+    }
+    &:active {
+      background-color: $C_GREEN_100;
+    }
+  } @else if $Type == $color_fill_success_strong_default {
+    background-color: $C_GREEN_500;
+    &:hover {
+      background-color: $C_GREEN_600;
+    }
+    &:active {
+      background-color: $C_GREEN_700;
+    }
+  } @else if $Type == $color_fill_danger_default {
+    background-color: $C_RED_25;
+    &:hover {
+      background-color: $C_RED_50;
+    }
+    &:active {
+      background-color: $C_RED_100;
+    }
+  } @else if $Type == $color_fill_danger_strong_default {
+    background-color: $C_RED_500;
+    &:hover {
+      background-color: $C_RED_600;
+    }
+
+    &:active {
+      background-color: $C_RED_700;
+    }
+  } @else if $Type == $color_fill_warning_default {
+    background-color: $C_YELLOW_25;
+    &:hover {
+      background-color: $C_YELLOW_50;
+    }
+    &:active {
+      background-color: $C_YELLOW_100;
+    }
+  } @else if $Type == $color_fill_warning_strong_default {
+    background-color: $C_YELLOW_500;
+    &:hover {
+      background-color: $C_YELLOW_600;
+    }
+    &:active {
+      background-color: $C_YELLOW_700;
+    }
+  } @else if $Type == $color_fill_information_default {
+    background-color: $C_SKYBLUE_25;
+    &:hover {
+      background-color: $C_SKYBLUE_50;
+    }
+    &:active {
+      background-color: $C_SKYBLUE_100;
+    }
+  } @else if $Type == $color_fill_information_strong_default {
+    background-color: $C_SKYBLUE_500;
+    &:hover {
+      background-color: $C_SKYBLUE_600;
+    }
+    &:active {
+      background-color: $C_SKYBLUE_700;
+    }
+  } @else if $Type == $color_fill_accent_default {
+    background-color: $C_GREEN_25;
+    &:hover {
+      background-color: $C_GREEN_50;
+    }
+    &:active {
+      background-color: $C_GREEN_100;
+    }
+  } @else if $Type == $color_fill_accent_green_default {
+    background-color: $C_GREEN_25;
+    &:hover {
+      background-color: $C_GREEN_50;
+    }
+    &:active {
+      background-color: $C_GREEN_100;
+    }
+  } @else if $Type == $color_fill_accent_green_strong_default {
+    background-color: $C_GREEN_500;
+    &:hover {
+      background-color: $C_GREEN_600;
+    }
+    &:active {
+      background-color: $C_GREEN_700;
+    }
+  } @else if $Type == $color_fill_accent_springgreen_default {
+    background-color: $C_SPRINGGREEN_25;
+    &:hover {
+      background-color: $C_SPRINGGREEN_50;
+    }
+    &:active {
+      background-color: $C_SPRINGGREEN_100;
+    }
+  } @else if $Type == $color_fill_accent_springgreen_strong_default {
+    background-color: $C_SPRINGGREEN_500;
+    &:hover {
+      background-color: $C_SPRINGGREEN_600;
+    }
+    &:active {
+      background-color: $C_SPRINGGREEN_700;
+    }
+  } @else if $Type == $color_fill_accent_olivegreen_default {
+    background-color: $C_OLIVEGREEN_25;
+    &:hover {
+      background-color: $C_OLIVEGREEN_50;
+    }
+    &:active {
+      background-color: $C_OLIVEGREEN_100;
+    }
+  } @else if $Type == $color_fill_accent_olivegreen_strong_default {
+    background-color: $C_OLIVEGREEN_500;
+    &:hover {
+      background-color: $C_OLIVEGREEN_600;
+    }
+    &:active {
+      background-color: $C_OLIVEGREEN_700;
+    }
+  } @else if $Type == $color_fill_accent_yellow_default {
+    background-color: $C_YELLOW_25;
+    &:hover {
+      background-color: $C_YELLOW_50;
+    }
+    &:active {
+      background-color: $C_YELLOW_100;
+    }
+  } @else if $Type == $color_fill_accent_yellow_strong_default {
+    background-color: $C_YELLOW_500;
+    &:hover {
+      background-color: $C_YELLOW_600;
+    }
+    &:active {
+      background-color: $C_YELLOW_700;
+    }
+  } @else if $Type == $color_fill_accent_gold_default {
+    background-color: $C_GOLD_25;
+    &:hover {
+      background-color: $C_GOLD_50;
+    }
+    &:active {
+      background-color: $C_GOLD_100;
+    }
+  } @else if $Type == $color_fill_accent_gold_strong_default {
+    background-color: $C_GOLD_500;
+    &:hover {
+      background-color: $C_GOLD_600;
+    }
+    &:active {
+      background-color: $C_GOLD_700;
+    }
+  } @else if $Type == $color_fill_accent_orange_default {
+    background-color: $C_ORANGE_25;
+    &:hover {
+      background-color: $C_ORANGE_50;
+    }
+    &:active {
+      background-color: $C_ORANGE_100;
+    }
+  } @else if $Type == $color_fill_accent_orange_strong_default {
+    background-color: $C_ORANGE_500;
+    &:hover {
+      background-color: $C_ORANGE_600;
+    }
+    &:active {
+      background-color: $C_ORANGE_700;
+    }
+  } @else if $Type == $color_fill_accent_red_default {
+    background-color: $C_RED_25;
+    &:hover {
+      background-color: $C_RED_50;
+    }
+    &:active {
+      background-color: $C_RED_100;
+    }
+  } @else if $Type == $color_fill_accent_red_strong_default {
+    background-color: $C_RED_500;
+    &:hover {
+      background-color: $C_RED_600;
+    }
+    &:active {
+      background-color: $C_RED_700;
+    }
+  } @else if $Type == $color_fill_accent_pink_default {
+    background-color: $C_PINK_25;
+    &:hover {
+      background-color: $C_PINK_50;
+    }
+    &:active {
+      background-color: $C_PINK_100;
+    }
+  } @else if $Type == $color_fill_accent_pink_strong_default {
+    background-color: $C_PINK_500;
+    &:hover {
+      background-color: $C_PINK_600;
+    }
+    &:active {
+      background-color: $C_PINK_700;
+    }
+  } @else if $Type == $color_fill_accent_purple_default {
+    background-color: $C_PURPLE_25;
+    &:hover {
+      background-color: $C_PURPLE_50;
+    }
+    &:active {
+      background-color: $C_PURPLE_100;
+    }
+  } @else if $Type == $color_fill_accent_purple_strong_default {
+    background-color: $C_PURPLE_500;
+    &:hover {
+      background-color: $C_PURPLE_600;
+    }
+    &:active {
+      background-color: $C_PURPLE_700;
+    }
+  } @else if $Type == $color_fill_accent_violet_default {
+    background-color: $C_VIOLET_25;
+    &:hover {
+      background-color: $C_VIOLET_50;
+    }
+    &:active {
+      background-color: $C_VIOLET_100;
+    }
+  } @else if $Type == $color_fill_accent_violet_strong_default {
+    background-color: $C_VIOLET_500;
+    &:hover {
+      background-color: $C_VIOLET_600;
+    }
+    &:active {
+      background-color: $C_VIOLET_700;
+    }
+  } @else if $Type == $color_fill_accent_cobaltblue_default {
+    background-color: $C_COBALTBLUE_25;
+    &:hover {
+      background-color: $C_COBALTBLUE_50;
+    }
+    &:active {
+      background-color: $C_COBALTBLUE_100;
+    }
+  } @else if $Type == $color_fill_accent_cobaltblue_strong_default {
+    background-color: $C_COBALTBLUE_500;
+    &:hover {
+      background-color: $C_COBALTBLUE_600;
+    }
+    &:active {
+      background-color: $C_COBALTBLUE_700;
+    }
+  } @else if $Type == $color_fill_accent_skyblue_default {
+    background-color: $C_SKYBLUE_25;
+    &:hover {
+      background-color: $C_SKYBLUE_50;
+    }
+    &:active {
+      background-color: $C_SKYBLUE_100;
+    }
+  } @else if $Type == $color_fill_accent_skyblue_strong_default {
+    background-color: $C_SKYBLUE_500;
+    &:hover {
+      background-color: $C_SKYBLUE_600;
+    }
+    &:active {
+      background-color: $C_SKYBLUE_700;
+    }
+  } @else if $Type == $color_fill_accent_cyan_default {
+    background-color: $C_CYAN_25;
+    &:hover {
+      background-color: $C_CYAN_50;
+    }
+    &:active {
+      background-color: $C_CYAN_100;
+    }
+  } @else if $Type == $color_fill_accent_cyan_strong_default {
+    background-color: $C_CYAN_500;
+    &:hover {
+      background-color: $C_CYAN_600;
+    }
+    &:active {
+      background-color: $C_CYAN_700;
+    }
+  } @else if $Type == $color_fill_accent_teal_default {
+    background-color: $C_TEAL_25;
+    &:hover {
+      background-color: $C_TEAL_50;
+    }
+    &:active {
+      background-color: $C_TEAL_100;
+    }
+  } @else if $Type == $color_fill_accent_teal_strong_default {
+    background-color: $C_TEAL_500;
+    &:hover {
+      background-color: $C_TEAL_600;
+    }
+    &:active {
+      background-color: $C_TEAL_700;
+    }
+  } @else if $Type == $color_fill_accent_gray_default {
+    background-color: $C_GRAY_25;
+    &:hover {
+      background-color: $C_GRAY_50;
+    }
+    &:active {
+      background-color: $C_GRAY_100;
+    }
+  } @else if $Type == $color_fill_accent_gray_strong_default {
+    background-color: $C_GRAY_500;
+    &:hover {
+      background-color: $C_GRAY_600;
+    }
+    &:active {
+      background-color: $C_GRAY_700;
+    }
+  }
+}

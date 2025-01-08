@@ -1,3 +1,6 @@
-.test {
-  background-color: red;
+@import "@styles/common.scss";
+
+.button {
+  @include FillStyle($color_fill_accent_cobaltblue_default);
+  @include FontStyle($body_3_sb, $color_text_accent_gold_default);
 }

@@ -1,0 +1,28 @@
+@import "./colors.scss"; //border Color
+
+$color_border_strong: $C_GRAY_300;
+$color_border_default: $C_GRAY_200;
+$color_border_subtle: $C_GRAY_100;
+$color_border_inverse: $C_GRAY_WHITE;
+$color_border_disabled: $C_GRAY_100;
+$color_border_brand: $C_GREEN_500;
+$color_border_success: $C_GREEN_500;
+$color_border_danger: $C_RED_500;
+$color_border_warning: $C_YELLOW_500;
+$color_border_information: $C_SKYBLUE_500;
+
+// accent
+$color_border_accent_green: $C_GREEN_500;
+$color_border_accent_springgreen: $C_SPRINGGREEN_500;
+$color_border_accent_olivegreen: $C_OLIVEGREEN_500;
+$color_border_accent_yellow: $C_YELLOW_500;
+$color_border_accent_gold: $C_GOLD_500;
+$color_border_accent_orange: $C_ORANGE_500;
+$color_border_accent_red: $C_RED_500;
+$color_border_accent_pink: $C_PINK_500;
+$color_border_accent_purple: $C_PURPLE_500;
+$color_border_accent_violet: $C_VIOLET_500;
+$color_border_accent_cobaltblue: $C_COBALTBLUE_500;
+$color_border_accent_skyblue: $C_SKYBLUE_500;
+$color_border_accent_cyan: $C_CYAN_500;
+$color_border_accent_teal: $C_TEAL_500;

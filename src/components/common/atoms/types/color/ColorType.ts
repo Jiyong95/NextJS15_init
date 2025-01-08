@@ -1,4 +1,4 @@
-enum Colors {
+enum ColorType {
   // GRAY
   C_GRAY_WHITE = "#ffffff",
   C_GRAY_BLACK = "#000000",
@@ -182,4 +182,4 @@ enum Colors {
   C_TEAL_800 = "#087f5b",
 }
 
-export default Colors;
+export default ColorType;
