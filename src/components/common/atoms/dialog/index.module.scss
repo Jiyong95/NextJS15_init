@@ -1,0 +1,28 @@
+@import '@styles/common.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius_M;
+  background-color: $color_background_surface_default;
+  @include BoxShadow(300);
+
+  .titleArea {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: $space_XL $space_XL $space_L $space_XL;
+  }
+
+  .descriptionArea {
+    padding: 0 $space_XL $space_XS;
+  }
+
+  .btnArea {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: $space_L $space_XL;
+  }
+}

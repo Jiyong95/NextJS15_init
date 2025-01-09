@@ -1,28 +1,35 @@
+import { IconProps } from '.';
+import { IconColors, IconColorType, IconSizeType } from './IconType';
+
 // SVG icons
-import VerCel_Fill from "@svg/vercel_fill.svg";
-import VerCel_Line from "@svg/vercel_fill.svg";
-import { IconProps } from ".";
-import { IconColors, IconColorType, IconSizeType } from "./IconType";
+import CirCleCheck from '@svg/icon_circle_check.svg';
+import CircleError from '@svg/icon_circle_error.svg';
+import Close from '@svg/icon_close.svg';
 
 export enum IconNameType {
-  vercel_fill = "vercel_fill",
-  vercel_line = "vercel_line",
+  circleCheck = 'circleCheck',
+  circleError = 'circleError',
+  close = 'close',
 }
 
 export const getElement = ({ name, size, fill, disabled }: IconProps) => {
   const svgProps = {
     ...getIconSize(size),
     fill: disabled ? IconColors[IconColorType.disabled] : IconColors[fill ?? IconColorType.default],
+    viewBox: '0 0 32 32',
   };
 
   /**
-   * @description 아이콘 fill, line에 따라 명칭 설정.
+   * @description viewBox가 다른 경우 직접 입력
+   * 보통 0 0 32 32
    */
   switch (name) {
-    case "vercel_fill":
-      return <VerCel_Fill {...svgProps} />;
-    case "vercel_line":
-      return <VerCel_Line {...svgProps} />;
+    case 'circleCheck':
+      return <CirCleCheck {...svgProps} />;
+    case 'circleError':
+      return <CircleError {...svgProps} />;
+    case 'close':
+      return <Close {...svgProps} />;
   }
 };
 
@@ -30,28 +37,28 @@ const getIconSize = (size: IconSizeType) => {
   switch (size) {
     case IconSizeType.XL:
       return {
-        width: "48px",
-        height: "48px",
+        width: '48px',
+        height: '48px',
       };
     case IconSizeType.L:
       return {
-        width: "40px",
-        height: "40px",
+        width: '40px',
+        height: '40px',
       };
     case IconSizeType.M:
       return {
-        width: "32px",
-        height: "32px",
+        width: '32px',
+        height: '32px',
       };
     case IconSizeType.S:
       return {
-        width: "24px",
-        height: "24px",
+        width: '24px',
+        height: '24px',
       };
     default:
       return {
-        width: "20px",
-        height: "20px",
+        width: '20px',
+        height: '20px',
       };
   }
 };

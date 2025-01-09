@@ -1,12 +1,13 @@
-@import "./variables/backgroundColor.scss";
-@import "./variables/borderColor.scss";
-@import "./variables/colors.scss";
-@import "./variables//fill.scss";
-@import "./variables/font.scss";
-@import "./variables/opacity.scss";
-@import "./variables/radius.scss";
-@import "./variables/space.scss";
-@import "./variables/textColor.scss";
+@import './variables/backgroundColor.scss';
+@import './variables/borderColor.scss';
+@import './variables/boxshadow.scss';
+@import './variables/colors.scss';
+@import './variables//fill.scss';
+@import './variables/font.scss';
+@import './variables/opacity.scss';
+@import './variables/radius.scss';
+@import './variables/space.scss';
+@import './variables/textColor.scss';
 
 @mixin ellipsis($LINE: 1, $LINE_HEIGHT: 1.2em) {
   @if ($LINE == 1) {
