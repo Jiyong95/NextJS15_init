@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, Children, isValidElement, ReactElement, useContext, createContext } from "react";
+import React, { ReactNode, useState, Children, isValidElement, useContext, createContext } from "react";
 
 interface FennelContextType {
   step: number;
@@ -33,7 +33,7 @@ const FennelItem: React.FC<FennelItemProps> = ({ children }) => {
 interface FennelProps {
   startStep?: number;
   layout?: React.FC<{ children: ReactNode }>;
-  children: ReactNode; // 수정: children의 타입을 ReactNode로 지정
+  children: ReactNode;
 }
 
 const Fennel = ({ startStep, layout: LayoutComponent, children }: FennelProps) => {
@@ -43,16 +43,13 @@ const Fennel = ({ startStep, layout: LayoutComponent, children }: FennelProps) =
   const nextStep = () => setStep(step + 1);
 
   // findFennelItems 함수의 node 타입을 ReactNode로 지정
-  const findFennelItems = (node: ReactNode): ReactElement<FennelItemProps>[] => {
-    let items: ReactElement<FennelItemProps>[] = [];
+  const findFennelItems = (node: ReactNode) => {
+    let items: ReactNode[] = [];
 
     Children.forEach(node, (child) => {
-      //child는 <Fennel.Item>
       if (isValidElement(child)) {
         if (child.type === FennelItem) {
-          items.push(child as ReactElement<FennelItemProps>);
-        } else if (child.props && (child.props as FennelItemProps).children) {
-          items = [...items, ...findFennelItems((child.props as FennelItemProps).children)];
+          items.push(child);
         }
       }
     });

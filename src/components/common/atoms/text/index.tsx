@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames/bind";
 import styles from "./index.module.scss";
 import { TextColor, TextColorType, TextElementType } from "./TextType";
-import { FontStyle, FontStyleType } from "@atoms/types/FontStyleType";
+import { FontStyle, FontStyleType } from "@constant/FontStyleType";
 const cx = classnames.bind(styles);
 
 export const TextOption = {
