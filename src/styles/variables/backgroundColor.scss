@@ -1,4 +1,4 @@
-@import "./colors.scss";
+@use './colors.scss' as *;
 
 $color_background_surface_default: $C_GRAY_WHITE;
 $color_background_surface_alternative: $C_GRAY_25;

@@ -1,4 +1,4 @@
-@import '@styles/common.scss';
+@use '@styles/common.scss' as *;
 
 .button {
   @include FillStyle($color_fill_accent_cobaltblue_default);

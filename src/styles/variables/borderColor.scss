@@ -1,4 +1,4 @@
-@import "./colors.scss"; //border Color
+@use './colors.scss' as *;
 
 $color_border_strong: $C_GRAY_300;
 $color_border_default: $C_GRAY_200;

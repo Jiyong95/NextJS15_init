@@ -1,4 +1,4 @@
-@import "./colors.scss";
+@use './colors.scss' as *;
 
 $color_text_strong: $C_GRAY_800;
 $color_text_default: $C_GRAY_700;

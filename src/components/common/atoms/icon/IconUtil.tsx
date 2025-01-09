@@ -5,10 +5,13 @@ import { IconColors, IconColorType, IconSizeType } from './IconType';
 import CirCleCheck from '@svg/icon_circle_check.svg';
 import CircleError from '@svg/icon_circle_error.svg';
 import Close from '@svg/icon_close.svg';
+import CircleInfo from '@svg/icon_circle_info.svg';
 
 export enum IconNameType {
+  //C
   circleCheck = 'circleCheck',
   circleError = 'circleError',
+  circleInfo = 'circleInfo',
   close = 'close',
 }
 
@@ -28,6 +31,8 @@ export const getElement = ({ name, size, fill, disabled }: IconProps) => {
       return <CirCleCheck {...svgProps} />;
     case 'circleError':
       return <CircleError {...svgProps} />;
+    case 'circleInfo':
+      return <CircleInfo {...svgProps} />;
     case 'close':
       return <Close {...svgProps} />;
   }
