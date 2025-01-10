@@ -1,15 +1,15 @@
-import React from "react";
-import Link, { LinkProps } from "next/link";
-import Icon from "../icon";
-import classnames from "classnames/bind";
-import styles from "./index.module.scss";
-import { ButtonIconPositionType, ButtonSizeType, ButtonType } from "./ButtonType";
-import { FillColorType } from "@constant/color/FillColorType";
-import { TextColor, TextColorType } from "@atoms/text/TextType";
-import { IconNameType } from "@atoms/icon/IconUtil";
-import { IconColorType } from "@atoms/icon/IconType";
-import { getButtonBorderStyle, getButtonIconSize, getButtonRadiusStyle, getButtonSpaceStyle } from "./ButtonUtil";
-import { FontStyle, FontStyleType } from "@constant/FontStyleType";
+import React from 'react';
+import Link, { LinkProps } from 'next/link';
+import Icon from '../icon';
+import classnames from 'classnames/bind';
+import styles from './index.module.scss';
+import { ButtonIconPositionType, ButtonSizeType, ButtonType } from './ButtonType';
+import { FillColorType } from '@constant/color/FillColorType';
+import { TextColor, TextColorType } from '@atoms/text/TextType';
+import { IconNameType } from '@atoms/icon/IconUtil';
+import { IconColorType } from '@atoms/icon/IconType';
+import { getButtonBorderStyle, getButtonIconSize, getButtonRadiusStyle, getButtonSpaceStyle } from './ButtonUtil';
+import { FontStyle, FontStyleType } from '@constant/FontStyleType';
 
 const cx = classnames.bind(styles);
 
@@ -88,13 +88,13 @@ const Button = ({
 
   if (aProps) {
     return (
-      <Link className={cx("button", className, type, fill)} {...aProps} style={style}>
-        <div className={cx("inner")}>
-          {iconName && iconPosition === "left" && (
+      <Link className={cx('button', className, type, fill)} {...aProps} style={style}>
+        <div className={cx('inner')}>
+          {iconName && iconPosition === 'left' && (
             <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} />
           )}
           {children}
-          {iconName && iconPosition === "right" && (
+          {iconName && iconPosition === 'right' && (
             <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} />
           )}
         </div>
@@ -104,19 +104,19 @@ const Button = ({
 
   return (
     <button
-      className={cx("button", className, type, fill, {
+      className={cx('button', className, type, fill, {
         isLoading,
       })}
       {...buttonProps}
       disabled={buttonProps?.disabled || isLoading}
       type={buttonProps?.type}
       style={style}>
-      <div className={cx("inner")}>
-        {iconName && iconPosition === "left" && (
+      <div className={cx('inner')}>
+        {iconName && iconPosition === 'left' && (
           <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} disabled={buttonProps?.disabled} />
         )}
-        {isLoading ? <span className={cx("spinner")} style={{ borderColor: TextColor[color] }} /> : children}
-        {iconName && iconPosition === "right" && (
+        {isLoading ? <span className={cx('spinner')} style={{ borderColor: TextColor[color] }} /> : children}
+        {iconName && iconPosition === 'right' && (
           <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} disabled={buttonProps?.disabled} />
         )}
       </div>

@@ -32,6 +32,13 @@ const Test = () => {
       <Icon name={IconOption.name.circleInfo_fill} size={IconOption.size.XL} fill={IconOption.fill.default} disabled />
       <h1>Button</h1>
       <Button
+        type={ButtonOption.type.OutLine}
+        size={ButtonOption.size.M}
+        fontStyle={ButtonOption.fontStyle.body_1_sb}
+        color={ButtonOption.color.subtle}>
+        아웃라인
+      </Button>
+      <Button
         fontStyle={ButtonOption.fontStyle.body_1_b}
         fill={ButtonOption.fill.accent_gold_strong_default}
         iconName={ButtonOption.iconName.circleInfo_fill}

@@ -1,8 +1,8 @@
-import { ButtonIconPositionType, ButtonSizeType, ButtonType } from "./ButtonType";
-import { BorderColorType } from "@constant/color/BorderColorType";
-import { IconSizeType } from "@atoms/icon/IconType";
-import { Space, SpaceType } from "@constant/SpaceType";
-import { Radius } from "@constant/RadiusType";
+import { ButtonIconPositionType, ButtonSizeType, ButtonType } from './ButtonType';
+import { BorderColor } from '@constant/color/BorderColorType';
+import { IconSizeType } from '@atoms/icon/IconType';
+import { Space, SpaceType } from '@constant/SpaceType';
+import { Radius } from '@constant/RadiusType';
 
 export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: ButtonIconPositionType) => {
   switch (buttonType) {
@@ -80,7 +80,7 @@ export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: 
 export const getButtonBorderStyle = (buttonType: ButtonType) => {
   if (buttonType === ButtonType.OutLine) {
     return {
-      border: `1px solid ${BorderColorType.default}`,
+      border: `1px solid ${BorderColor.default}`,
     };
   }
   return {};

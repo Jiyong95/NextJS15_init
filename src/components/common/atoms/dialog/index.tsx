@@ -20,7 +20,7 @@ interface Props {
   className?: string;
   title: string;
   description: React.ReactNode;
-  iconName?: IconNameType.circleCheck | IconNameType.circleError;
+  iconName?: IconNameType.circleCheck_fill | IconNameType.circleError_fill;
   iconColor?: IconColorType.danger | IconColorType.information | IconColorType.success;
   closeBtnProps?: BtnProps;
   confirmBtnProps?: BtnProps;
@@ -45,7 +45,7 @@ const Dialog = ({
   description,
   closeBtnProps,
   confirmBtnProps,
-  iconName = IconNameType.circleError,
+  iconName = IconNameType.circleError_fill,
   iconColor = IconColorType.danger,
 }: Props) => {
   const el = document.createElement('div');
