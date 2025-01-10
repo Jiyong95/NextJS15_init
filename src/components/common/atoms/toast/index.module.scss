@@ -1,28 +1,22 @@
-@use '@styles/common.scss';
+@use '@styles/common.scss' as *;
 
 .toastArea {
   position: fixed;
-  bottom: 0;
   left: 50%;
+  bottom: 0;
   display: flex;
   align-items: center;
-  gap: 4px;
-  transform: translate(-50%, 0);
-  width: fit-content;
-  height: fit-content;
-  padding: 12px 18px 12px 14px;
-  border-radius: 8px;
-  background: rgba(26, 26, 26, 0.85);
+  gap: $space_XXS;
+  padding: $space_M $space_L;
+  border-radius: $radius_S;
+  background-color: $color_background_accent_gray_default;
+  @include BoxShadow(300);
   z-index: 9999;
   animation:
     fadeIn 0.5s ease-out forwards,
     fadeOut 0.5s ease-in forwards;
-  animation-delay: 0s, 2.5s; // fadeOut starts after fadeIn and 2 seconds of display
-}
-
-.content {
-  white-space: nowrap;
-  // @include fontStyle($Body_L, $Grey_Scale_White);
+  animation-delay: 0s, 2.5s;
+  transform: translate(-50%, 0);
 }
 
 @keyframes fadeIn {

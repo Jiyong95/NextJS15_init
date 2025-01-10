@@ -2,16 +2,21 @@ import { IconProps } from '.';
 import { IconColors, IconColorType, IconSizeType } from './IconType';
 
 // SVG icons
-import CirCleCheck from '@svg/icon_circle_check.svg';
-import CircleError from '@svg/icon_circle_error.svg';
+/**
+ * @description icon추가시 아이콘안에 배경색이 있으면 fill을 추가하여 파일명을 작성한다.
+ */
+import CirCleCheck_fill from '@svg/icon_circle_check_fill.svg';
+import CircleError_fill from '@svg/icon_circle_error_fill.svg';
 import Close from '@svg/icon_close.svg';
 import CircleInfo from '@svg/icon_circle_info.svg';
+import CircleInfo_fill from '@svg/icon_circle_info_fill.svg';
 
 export enum IconNameType {
   //C
-  circleCheck = 'circleCheck',
-  circleError = 'circleError',
+  circleCheck_fill = 'circleCheck_fill',
+  circleError_fill = 'circleError_fill',
   circleInfo = 'circleInfo',
+  circleInfo_fill = 'circleInfo_fill',
   close = 'close',
 }
 
@@ -23,16 +28,18 @@ export const getElement = ({ name, size, fill, disabled }: IconProps) => {
   };
 
   /**
-   * @description viewBox가 다른 경우 직접 입력
-   * 보통 0 0 32 32
+   * @description icon추가시 width, height가 32인 svg파일을 추가한다.
+   * 불가능할 경우 추가 후 viewBox가 다르면 직접 입력
    */
   switch (name) {
-    case 'circleCheck':
-      return <CirCleCheck {...svgProps} />;
-    case 'circleError':
-      return <CircleError {...svgProps} />;
+    case 'circleCheck_fill':
+      return <CirCleCheck_fill {...svgProps} />;
+    case 'circleError_fill':
+      return <CircleError_fill {...svgProps} />;
     case 'circleInfo':
       return <CircleInfo {...svgProps} />;
+    case 'circleInfo_fill':
+      return <CircleInfo_fill {...svgProps} />;
     case 'close':
       return <Close {...svgProps} />;
   }
