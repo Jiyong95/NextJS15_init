@@ -1,55 +1,60 @@
-import V2Button from '@common/v2Design/button';
 import type { Meta, StoryObj } from '@storybook/react';
-import { V2ButtonOption } from '@domain/constant/v2Design/V2ButtonType';
+import Button, { ButtonOption } from '.';
 
 const meta = {
-  title: 'Components/V2/Button',
-  component: V2Button,
+  title: 'atoms/Button',
+  component: Button,
   parameters: {
     layout: 'centered',
   },
   args: {
-    type: V2ButtonOption.type.Fill,
-    size: V2ButtonOption.size.L,
-    fontStyle: V2ButtonOption.fontStyle.body_1_b,
-    color: V2ButtonOption.color.brand,
+    type: ButtonOption.type.Fill,
+    size: ButtonOption.size.L,
+    fontStyle: ButtonOption.fontStyle.body_1_b,
+    color: ButtonOption.color.brand,
+    isLoading: false,
     children: 'button',
   },
   argTypes: {
     type: {
       control: 'select',
-      options: V2ButtonOption.type, // 타입 옵션들 지정
+      options: Object.keys(ButtonOption.type), // 타입 옵션들 지정
     },
     size: {
       control: 'select',
-      options: V2ButtonOption.size, // 사이즈 값 지정
+      options: Object.keys(ButtonOption.size), // 사이즈 값 지정
     },
     fontStyle: {
       control: 'select',
-      options: V2ButtonOption.fontStyle,
+      options: Object.keys(ButtonOption.fontStyle),
     },
     color: {
       control: 'select',
-      options: V2ButtonOption.color,
+      options: Object.keys(ButtonOption.color),
     },
     fill: {
       control: 'select',
-      options: V2ButtonOption.fill,
+      options: Object.keys(ButtonOption.fill),
     },
     iconName: {
       control: 'select',
-      options: V2ButtonOption.iconName,
+      options: Object.keys(ButtonOption.iconName),
     },
     iconPosition: {
       control: 'select',
-      options: V2ButtonOption.iconPosition,
+      options: Object.keys(ButtonOption.iconPosition),
     },
     iconColor: {
       control: 'select',
-      options: V2ButtonOption.iconColor,
+      options: Object.keys(ButtonOption.iconColor),
+    },
+    className: {
+      table: {
+        disable: true,
+      },
     },
   },
-} satisfies Meta<typeof V2Button>;
+} satisfies Meta<typeof Button>;
 
 export default meta;
 

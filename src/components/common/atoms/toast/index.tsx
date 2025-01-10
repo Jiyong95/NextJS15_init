@@ -8,12 +8,12 @@ import Text, { TextOption } from '@atoms/text';
 
 const cx = classnames.bind(styles);
 
-interface ToastProps {
+export interface ToastProps {
   iconName?: IconNameType;
   content: ReactNode;
 }
 
-const ToastDom = ({ iconName = IconNameType.circleInfo_fill, content }: ToastProps) => (
+export const ToastDom = ({ iconName = IconNameType.circleInfo_fill, content }: ToastProps) => (
   <div className={cx('toastArea')}>
     <Icon name={iconName} size={IconOption.size.S} fill={IconOption.fill.inverse} />
     <Text fontStyle={TextOption.fontStyle.body_2_m} color={TextOption.color.inverse} styles={{ whiteSpace: 'nowrap' }}>

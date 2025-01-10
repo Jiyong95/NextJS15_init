@@ -40,9 +40,9 @@ const Test = () => {
       </Button>
       <Button
         fontStyle={ButtonOption.fontStyle.body_1_b}
-        fill={ButtonOption.fill.accent_gold_strong_default}
+        fill={ButtonOption.fill.accent_orange_strong_default}
         iconName={ButtonOption.iconName.circleInfo_fill}
-        iconPosition={ButtonOption.iconPosition.left}
+        iconPosition={ButtonOption.iconPosition.right}
         buttonProps={{
           onClick: () => setTest(!test),
         }}>

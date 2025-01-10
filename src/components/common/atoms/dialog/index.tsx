@@ -16,7 +16,7 @@ interface BtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-interface Props {
+export interface DialogProps {
   className?: string;
   title: string;
   description: React.ReactNode;
@@ -47,7 +47,7 @@ const Dialog = ({
   confirmBtnProps,
   iconName = IconNameType.circleError_fill,
   iconColor = IconColorType.danger,
-}: Props) => {
+}: DialogProps) => {
   const el = document.createElement('div');
   document.body.appendChild(el);
 

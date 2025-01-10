@@ -1,38 +1,37 @@
-import V2Text from '@components/common/v2Design/text';
 import type { Meta, StoryObj } from '@storybook/react';
-import { V2TextOption } from '@domain/constant/v2Design/V2TextType';
+import { TextOption } from '.';
+import Text from '.';
 
 const meta = {
-  title: 'Components/V2/Text',
-  component: V2Text,
+  title: 'atoms/Text',
+  component: Text,
   parameters: {
     layout: 'centered',
   },
   args: {
-    element: V2TextOption.element.p,
-    fontStyle: V2TextOption.fontStyle.body_1_b,
-    color: V2TextOption.color.brand,
-    ellipsis: false,
+    element: TextOption.element.p,
+    fontStyle: TextOption.fontStyle.body_1_b,
+    color: TextOption.color.brand,
     children: 'text',
   },
   argTypes: {
     element: {
       control: 'select',
-      options: V2TextOption.element, // 타입 옵션들 지정
+      options: Object.keys(TextOption.element), // 타입 옵션들 지정
     },
     fontStyle: {
       control: 'select',
-      options: V2TextOption.fontStyle,
+      options: Object.keys(TextOption.fontStyle),
     },
     color: {
       control: 'select',
-      options: V2TextOption.color,
+      options: Object.keys(TextOption.color),
     },
     ellipsis: {
-      control: 'boolean',
+      control: 'number',
     },
   },
-} satisfies Meta<typeof V2Text>;
+} satisfies Meta<typeof Text>;
 
 export default meta;
 
