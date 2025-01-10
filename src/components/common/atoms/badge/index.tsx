@@ -1,12 +1,12 @@
-import { FC } from "react";
-import classnames from "classnames/bind";
-import styles from "./index.module.scss";
-import { BadgeSizeType, BadgeType } from "./BadgeType";
-import { TextColor, TextColorType } from "@atoms/text/TextType";
-import { BackgroundColor, BackgroundColorType } from "@constant/color/BackgroundColorType";
-import { BorderColorType } from "@constant/color/BorderColorType";
-import { getBadgeBorderStyle, getBadgeRadiusStyle, getBadgeSpaceStyle } from "./BadgeUtil";
-import { FontStyle, FontStyleType } from "@constant/FontStyleType";
+import { FC } from 'react';
+import classnames from 'classnames/bind';
+import styles from './index.module.scss';
+import { BadgeSizeType, BadgeType } from './BadgeType';
+import { TextColor, TextColorType } from '@atoms/text/TextType';
+import { BackgroundColor, BackgroundColorType } from '@constant/styles/color/BackgroundColorType';
+import { BorderColorType } from '@constant/styles/color/BorderColorType';
+import { getBadgeBorderStyle, getBadgeRadiusStyle, getBadgeSpaceStyle } from './BadgeUtil';
+import { FontStyle, FontStyleType } from '@constant/styles/FontStyleType';
 
 const cx = classnames.bind(styles);
 
@@ -64,7 +64,7 @@ const Badge: FC<Props> = ({
   };
 
   return (
-    <div className={cx("badge", className)} style={style}>
+    <div className={cx('badge', className)} style={style}>
       {children}
     </div>
   );

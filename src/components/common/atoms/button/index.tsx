@@ -4,12 +4,12 @@ import Icon from '../icon';
 import classnames from 'classnames/bind';
 import styles from './index.module.scss';
 import { ButtonIconPositionType, ButtonSizeType, ButtonType } from './ButtonType';
-import { FillColorType } from '@constant/color/FillColorType';
+import { FillColorType } from '@constant/styles/color/FillColorType';
 import { TextColor, TextColorType } from '@atoms/text/TextType';
 import { IconNameType } from '@atoms/icon/IconUtil';
 import { IconColorType } from '@atoms/icon/IconType';
 import { getButtonBorderStyle, getButtonIconSize, getButtonRadiusStyle, getButtonSpaceStyle } from './ButtonUtil';
-import { FontStyle, FontStyleType } from '@constant/FontStyleType';
+import { FontStyle, FontStyleType } from '@constant/styles/FontStyleType';
 
 const cx = classnames.bind(styles);
 

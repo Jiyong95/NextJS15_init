@@ -1,7 +1,7 @@
-import { Radius } from "@constant/RadiusType";
-import { BadgeSizeType, BadgeType } from "./BadgeType";
-import { BorderColor, BorderColorType } from "@constant/color/BorderColorType";
-import { Space, SpaceType } from "@constant/SpaceType";
+import { Radius } from '@constant/styles/RadiusType';
+import { BadgeSizeType, BadgeType } from './BadgeType';
+import { BorderColor, BorderColorType } from '@constant/styles/color/BorderColorType';
+import { Space, SpaceType } from '@constant/styles/SpaceType';
 
 export const getBadgeRadiusStyle = (size?: BadgeSizeType) => {
   switch (size) {
