@@ -10,6 +10,7 @@ import Modal from '@atoms/modal';
 import { useState } from 'react';
 import Dialog from '@atoms/dialog';
 import { useToast } from '@atoms/toast';
+import { useAdsMainBanners, useAdsMainBanners2 } from '@repository/ads/useAds';
 
 const cx = classnames.bind(styles);
 
@@ -20,6 +21,21 @@ const FennelItemss = ({ step }: { step: number }) => {
 };
 
 const Test = () => {
+  const { data } = useAdsMainBanners({
+    enabled: false,
+  });
+
+  console.log('data', data);
+
+  const { mutateAsync } = useAdsMainBanners2();
+  const onClick = () => {
+    mutateAsync(undefined, {
+      onSuccess: (data) => {
+        console.log('mutate', data);
+      },
+    });
+  };
+
   const [test, setTest] = useState(false);
   const Toast = useToast();
 
@@ -35,7 +51,10 @@ const Test = () => {
         type={ButtonOption.type.OutLine}
         size={ButtonOption.size.M}
         fontStyle={ButtonOption.fontStyle.body_1_sb}
-        color={ButtonOption.color.subtle}>
+        color={ButtonOption.color.subtle}
+        buttonProps={{
+          onClick,
+        }}>
         아웃라인
       </Button>
       <Button
