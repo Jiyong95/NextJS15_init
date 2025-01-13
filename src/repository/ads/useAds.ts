@@ -3,16 +3,16 @@ import { AdsRepo } from './AdsRepo';
 import { AdsMainBannerListRs } from './types/AdsMainBanner';
 import { CUSTOM_QUERY_OPTIONS } from '@repository/Types';
 
-export function useAdsMainBanners(options?: CUSTOM_QUERY_OPTIONS<AdsMainBannerListRs>) {
+export const useAdsMainBanners = (options?: CUSTOM_QUERY_OPTIONS<AdsMainBannerListRs>) => {
   return useQuery({
     queryKey: ['ads'],
     queryFn: AdsRepo.fetchAdsMainBanners,
     ...options,
   });
-}
+};
 
-export function useAdsMainBanners2() {
+export const useAdsMainBanners2 = () => {
   return useMutation<AdsMainBannerListRs>({
     mutationFn: AdsRepo.fetchAdsMainBanners,
   });
-}
+};
