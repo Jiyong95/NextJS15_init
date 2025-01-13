@@ -1,5 +1,5 @@
 import { axios } from '@repository/axios';
-import { AdsMainBannerListRs } from './types/AdsMainBanner';
+import { AdsMainBannerListRs } from './rqrs/AdsMainBanner';
 
 export const AdsRepo = {
   fetchAdsMainBanners: async () => {
