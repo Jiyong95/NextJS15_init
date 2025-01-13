@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { AdsRepo } from './AdsRepo';
 import { AdsMainBannerListRs } from './types/AdsMainBanner';
-import { CUSTOM_QUERY_OPTIONS } from '@repository/Types';
+import { CUSTOM_QUERY_OPTIONS } from '@repository/QueryType';
 
 export const useAdsMainBanners = (options?: CUSTOM_QUERY_OPTIONS<AdsMainBannerListRs>) => {
   return useQuery({
