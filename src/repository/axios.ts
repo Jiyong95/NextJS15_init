@@ -1,5 +1,4 @@
 import _axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { getAccessToken } from '@utils/hook/useAccessToken';
 
 interface ApiErrorRs<T extends string = string> {
   code: T;
@@ -8,17 +7,17 @@ interface ApiErrorRs<T extends string = string> {
   message: string;
 }
 
-// axios baseURL 설정
+// TODO : axios baseURL 설정
 const getBaseUrl = (env: typeof process.env.NEXT_PUBLIC_ENV) => {
   switch (env) {
-    case 'development':
-      return 'https://api-matching-curation.ats.kr-dv-jainwon.com';
     case 'staging':
       return 'https://api-matching-curation.ats.kr-st-jainwon.com';
     case 'staging2':
       return 'https://api-matching-curation.ats.kr-st2-jainwon.com';
     case 'production':
       return 'https://api-matching-curation.ats.kr-pr-jainwon.com';
+    case 'development':
+      return 'https://api-jobda-im.kr-dv-jainwon.com';
   }
 };
 
@@ -27,10 +26,10 @@ const baseURL = process?.env?.NEXT_PUBLIC_HOST_DOMAIN ?? getBaseUrl(developmentE
 
 export class RequestClient {
   private axiosInstance!: AxiosInstance;
-  private callbackArray: (() => void)[] = []; //토큰이 만료되어 실패한 요청(콜백 함수)들을 저장.
-  //토큰 갱신 판별
+  private callbackQueue: (() => void)[] = []; //토큰이 만료되어 실패한 요청(콜백 함수)들을 저장.
+  //토큰 갱신중 판별
   private get isRefreshing() {
-    return this.callbackArray.length > 0;
+    return this.callbackQueue.length > 0;
   }
 
   constructor() {
@@ -74,7 +73,7 @@ export class RequestClient {
 
   // 에러 처리
   private async formatErrorResponse(e: AxiosError<ApiErrorRs>): Promise<Error | AxiosResponse> {
-    if (!e.response) return Promise.reject(e);
+    if (!e.response || !e.config) return Promise.reject(e);
     // 공통 authError 판별
     const { data, status } = e.response;
     const code = data.code;
@@ -82,59 +81,58 @@ export class RequestClient {
     // 401에러처리
     if (status === 401) {
       // 에러코드 정의되면 작성
-
-      // switch(code) {
-      //   //accessToken이 만료된 경우
-      //   case 'AUTH_TOKEN_EXPIRED':
-      //     return this.onRefreshAccessToken(e.config);
-      //   //refreshToken이 만료된 경우
-      //   case 'REFRESH_TOKEN_EXPIRED':
-      //     await deleteToken();
-      //     return Promise.reject(e);
+      // if ('NO_ACCESSTOKEN' === code || 'REFRESH_TOKEN_EXPIRED' === code) {
+      //   await deleteToken();
+      //   return Promise.reject(e);
       // }
-
       // accessToken 재발급
-      return this.onRefreshAccessToken(e.config);
+      if (!this.isRefreshing) return this.onRefreshAccessToken(e.config);
+      return this.registerCallback(e.config);
     }
 
     return Promise.reject(e);
   }
 
-  private async onRefreshAccessToken(requestConfig?: AxiosRequestConfig): Promise<AxiosResponse> {
-    if (!requestConfig) return Promise.reject('requestConfig is undefined');
+  private async onRefreshAccessToken(requestConfig: AxiosRequestConfig): Promise<AxiosResponse> {
+    // 실패한 요청을 콜백함수로 등록
+    const promise = this.registerCallback(requestConfig);
 
-    if (!this.isRefreshing) {
-      // accessToken 재발급 api 작성
+    //TODO : accessToken 재발급 api 작성
+    try {
       // const res = await getAuthAccessToken();
       // setAccessToken(res.accessToken);
-      this.onAccessTokenRefreshEnd();
-      return this.registerRetryOnTokenRefresh(requestConfig);
+      // setAxiosHeader('Authorization', res.accessToken);
+      this.retryCallbackQueue();
+    } catch (e) {
+      // deleteToken();
     }
 
-    return this.registerRetryOnTokenRefresh(requestConfig);
+    return promise;
   }
 
   // accessToken 재발급 완료시 실행
-  private onAccessTokenRefreshEnd() {
-    this.callbackArray.forEach((v) => v());
-    this.callbackArray.splice(0);
+  private retryCallbackQueue() {
+    this.callbackQueue.forEach((v) => v());
+    this.callbackQueue.splice(0);
   }
 
-  private appendAccessTokenRefreshSubscriber(subscriber: () => void) {
-    this.callbackArray.push(subscriber);
+  // 콜백함수 추가
+  private enqueueCallback(cb: () => void) {
+    this.callbackQueue.push(cb);
   }
 
-  private refreshExpiredTokenRequest(requestConfig: AxiosRequestConfig) {
+  // 새로운 토큰 설정
+  private applyNewTokenToRequest(requestConfig: AxiosRequestConfig) {
     if (requestConfig.headers) {
-      requestConfig.headers.Authorization = `Bearer ${getAccessToken()}`;
+      requestConfig.headers.Authorization = this.axios.defaults.headers.common.Authorization;
     }
   }
 
   // 콜백함수 등록
-  private registerRetryOnTokenRefresh(requestConfig: AxiosRequestConfig) {
+  private registerCallback(requestConfig: AxiosRequestConfig) {
     return new Promise<AxiosResponse>((resolve) => {
-      this.appendAccessTokenRefreshSubscriber(() => {
-        this.refreshExpiredTokenRequest(requestConfig);
+      this.enqueueCallback(() => {
+        this.applyNewTokenToRequest(requestConfig);
         resolve(this.axios.request(requestConfig));
       });
     });

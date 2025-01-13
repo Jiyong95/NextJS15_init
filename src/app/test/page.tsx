@@ -1,4 +1,4 @@
-import Test from "@components/test";
+import Test from '@components/test';
 
 const Page = () => {
   return <Test />;
