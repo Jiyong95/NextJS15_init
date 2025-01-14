@@ -1,10 +1,12 @@
 'use client';
-import { ReactNode, createContext, useContext, useRef, useState } from 'react';
-import styles from './index.module.scss';
 import classnames from 'classnames/bind';
-import { IconNameType } from '@atoms/icon/IconUtil';
+import { ReactNode, createContext, useContext, useRef, useState } from 'react';
+
 import Icon, { IconOption } from '@atoms/icon';
+import { IconNameType } from '@atoms/icon/IconUtil';
 import Text, { TextOption } from '@atoms/text';
+
+import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 

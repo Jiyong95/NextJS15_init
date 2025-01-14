@@ -1,4 +1,5 @@
-import { axios } from '@repository/axios';
+import { axios } from '@repository/Axios';
+
 import { AdsMainBannerListRs } from './rqrs/AdsMainBanner';
 
 export const AdsRepo = {

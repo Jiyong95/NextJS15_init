@@ -1,9 +1,12 @@
+import classnames from 'classnames/bind';
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import classnames from 'classnames/bind';
-import styles from './index.module.scss';
+
 import Icon, { IconOption } from '@atoms/icon';
+
 import { ModalTemplateType } from './ModalType';
+
+import styles from './index.module.scss';
 const cx = classnames.bind(styles);
 
 interface Props {

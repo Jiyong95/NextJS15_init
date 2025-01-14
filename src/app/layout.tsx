@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import '@styles/reset.scss';
 import localFont from 'next/font/local';
-import QueryClientProvider from '@components/common/layout/QueryClientProviders';
+
 import { ToastProvider } from '@atoms/toast';
+import QueryClientProvider from '@components/common/layout/QueryClientProviders';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

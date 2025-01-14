@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useKeydown(cb: Function, key: string = 'Escape') {
+export function useKeydown(cb: () => void, key: string = 'Escape') {
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (key === e.code) {

@@ -1,16 +1,19 @@
 'use client';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-import Icon, { IconOption } from '@atoms/icon';
-import Button, { ButtonOption } from '@atoms/button';
-import Text, { TextOption } from '@atoms/text';
-import Badge, { BadgeOption } from '@atoms/badge';
-import Fennel, { useFennel } from '@atoms/fennel';
-import Modal from '@atoms/modal';
 import { useState } from 'react';
-import Dialog from '@atoms/dialog';
-import { useToast } from '@atoms/toast';
+
 import { useAdsMainBanners, useAdsMainBanners2 } from '@repository/ads/useAds';
+
+import Badge, { BadgeOption } from '@atoms/badge';
+import Button, { ButtonOption } from '@atoms/button';
+import Dialog from '@atoms/dialog';
+import Fennel, { useFennel } from '@atoms/fennel';
+import Icon, { IconOption } from '@atoms/icon';
+import Modal from '@atoms/modal';
+import Text, { TextOption } from '@atoms/text';
+import { useToast } from '@atoms/toast';
+
+import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 

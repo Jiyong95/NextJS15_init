@@ -33,6 +33,7 @@ const eslintConfig = [
     rules: {
       // 기존 규칙
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
 
       // import/order 규칙 추가
       'import/order': [

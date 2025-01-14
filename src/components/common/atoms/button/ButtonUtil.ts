@@ -1,8 +1,10 @@
-import { ButtonIconPositionType, ButtonSizeType, ButtonType } from './ButtonType';
 import { BorderColor } from '@constant/styles/color/BorderColorType';
-import { IconSizeType } from '@atoms/icon/IconType';
-import { Space, SpaceType } from '@constant/styles/SpaceType';
 import { Radius } from '@constant/styles/RadiusType';
+import { Space, SpaceType } from '@constant/styles/SpaceType';
+
+import { IconSizeType } from '@atoms/icon/IconType';
+
+import { ButtonIconPositionType, ButtonSizeType, ButtonType } from './ButtonType';
 
 export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: ButtonIconPositionType) => {
   switch (buttonType) {

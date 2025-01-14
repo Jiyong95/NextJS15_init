@@ -1,16 +1,16 @@
 export enum SpaceType {
-  NONE = "NONE",
-  XXXXS = "XXXXS",
-  XXXS = "XXXS",
-  XXS = "XXS",
-  XS = "XS",
-  S = "S",
-  M = "M",
-  L = "L",
-  XL = "XL",
-  XXL = "XXL",
-  XXXL = "XXXL",
-  XXXXL = "XXXXL",
+  NONE = 'NONE',
+  XXXXS = 'XXXXS',
+  XXXS = 'XXXS',
+  XXS = 'XXS',
+  XS = 'XS',
+  S = 'S',
+  M = 'M',
+  L = 'L',
+  XL = 'XL',
+  XXL = 'XXL',
+  XXXL = 'XXXL',
+  XXXXL = 'XXXXL',
 }
 
 export const Space: Record<SpaceType, number> = {

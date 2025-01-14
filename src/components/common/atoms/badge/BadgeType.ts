@@ -1,9 +1,9 @@
 export enum BadgeType {
-  Fill = "Fill",
-  OutLine = "OutLine",
+  Fill = 'Fill',
+  OutLine = 'OutLine',
 }
 
 export enum BadgeSizeType {
-  L = "L",
-  M = "M",
+  L = 'L',
+  M = 'M',
 }

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, Children, isValidElement, useContext, createContext } from "react";
+import React, { ReactNode, useState, Children, isValidElement, useContext, createContext } from 'react';
 
 interface FennelContextType {
   step: number;
@@ -17,7 +17,7 @@ const FennelContext = createContext<FennelContextType>(defaultFennelContext);
 export const useFennel = () => {
   const context = useContext(FennelContext);
   if (!context) {
-    throw new Error("FennelProvider를 찾을 수 없습니다.");
+    throw new Error('FennelProvider를 찾을 수 없습니다.');
   }
   return context;
 };
@@ -44,7 +44,7 @@ const Fennel = ({ startStep, layout: LayoutComponent, children }: FennelProps) =
 
   // findFennelItems 함수의 node 타입을 ReactNode로 지정
   const findFennelItems = (node: ReactNode) => {
-    let items: ReactNode[] = [];
+    const items: ReactNode[] = [];
 
     Children.forEach(node, (child) => {
       if (isValidElement(child)) {

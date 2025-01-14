@@ -1,12 +1,16 @@
-import { FC } from 'react';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-import { BadgeSizeType, BadgeType } from './BadgeType';
-import { TextColor, TextColorType } from '@atoms/text/TextType';
+import { FC } from 'react';
+
 import { BackgroundColor, BackgroundColorType } from '@constant/styles/color/BackgroundColorType';
 import { BorderColorType } from '@constant/styles/color/BorderColorType';
-import { getBadgeBorderStyle, getBadgeRadiusStyle, getBadgeSpaceStyle } from './BadgeUtil';
 import { FontStyle, FontStyleType } from '@constant/styles/FontStyleType';
+
+import { TextColor, TextColorType } from '@atoms/text/TextType';
+
+import { BadgeSizeType, BadgeType } from './BadgeType';
+import { getBadgeBorderStyle, getBadgeRadiusStyle, getBadgeSpaceStyle } from './BadgeUtil';
+
+import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 

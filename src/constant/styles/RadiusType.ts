@@ -1,12 +1,12 @@
 export enum RadiusType {
-  NONE = "NONE",
-  XS = "XS",
-  S = "S",
-  M = "M",
-  L = "L",
-  XL = "XL",
-  XXL = "XXL",
-  CIRCULAR = "CIRCULAR",
+  NONE = 'NONE',
+  XS = 'XS',
+  S = 'S',
+  M = 'M',
+  L = 'L',
+  XL = 'XL',
+  XXL = 'XXL',
+  CIRCULAR = 'CIRCULAR',
 }
 
 export const Radius: Record<RadiusType, number> = {

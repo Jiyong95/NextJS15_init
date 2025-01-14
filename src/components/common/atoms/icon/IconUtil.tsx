@@ -1,15 +1,15 @@
-import { IconProps } from '.';
-import { IconColors, IconColorType, IconSizeType } from './IconType';
-
 // SVG icons
 /**
  * @description icon추가시 아이콘안에 배경색이 있으면 fill을 추가하여 파일명을 작성한다.
  */
 import CirCleCheck_fill from '@svg/icon_circle_check_fill.svg';
 import CircleError_fill from '@svg/icon_circle_error_fill.svg';
-import Close from '@svg/icon_close.svg';
 import CircleInfo from '@svg/icon_circle_info.svg';
 import CircleInfo_fill from '@svg/icon_circle_info_fill.svg';
+import Close from '@svg/icon_close.svg';
+
+import { IconProps } from '.';
+import { IconColors, IconColorType, IconSizeType } from './IconType';
 
 export enum IconNameType {
   //C

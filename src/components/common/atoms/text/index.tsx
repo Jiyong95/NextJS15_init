@@ -1,8 +1,12 @@
-import React from 'react';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-import { TextColor, TextColorType, TextElementType } from './TextType';
+import React from 'react';
+
 import { FontStyle, FontStyleType } from '@constant/styles/FontStyleType';
+
+import { TextColor, TextColorType, TextElementType } from './TextType';
+
+import styles from './index.module.scss';
+
 const cx = classnames.bind(styles);
 
 export const TextOption = {

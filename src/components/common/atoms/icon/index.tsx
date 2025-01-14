@@ -1,8 +1,11 @@
-import { FC } from 'react';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-import { getElement, IconNameType } from './IconUtil';
+import { FC } from 'react';
+
 import { IconColorType, IconSizeType } from './IconType';
+import { getElement, IconNameType } from './IconUtil';
+
+import styles from './index.module.scss';
+
 const cx = classnames.bind(styles);
 
 export const IconOption = {

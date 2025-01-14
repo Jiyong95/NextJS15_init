@@ -1,14 +1,16 @@
-import React from 'react';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-import { IconNameType } from '@atoms/icon/IconUtil';
-import { IconColorType } from '@atoms/icon/IconType';
-import Modal from '@atoms/modal';
-import Text, { TextOption } from '@atoms/text';
-import Icon, { IconOption } from '@atoms/icon';
-import Button, { ButtonOption } from '@atoms/button';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+
+import Button, { ButtonOption } from '@atoms/button';
+import Icon, { IconOption } from '@atoms/icon';
+import { IconColorType } from '@atoms/icon/IconType';
+import { IconNameType } from '@atoms/icon/IconUtil';
+import Modal from '@atoms/modal';
 import { ModalTemplateType } from '@atoms/modal/ModalType';
+import Text, { TextOption } from '@atoms/text';
+
+import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 
