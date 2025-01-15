@@ -3,6 +3,7 @@
 *:after {
   font-family: Pretendard, sans-serif;
   box-sizing: border-box;
+  vertical-align: middle; // inline, inline-block 및 inline-flex 요소의 수직 정렬을 위해 추가
 }
 
 html,

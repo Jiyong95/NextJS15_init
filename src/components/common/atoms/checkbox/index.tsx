@@ -19,14 +19,7 @@ interface Props {
   onClick?: () => void;
 }
 
-const Checkbox: FC<Props> = ({
-  className,
-  size = CheckboxSizeType.L,
-  onClick,
-  selected = false,
-  disabled,
-  indeterminate,
-}) => {
+const Checkbox: FC<Props> = ({ className, size = CheckboxSizeType.L, onClick, selected, disabled, indeterminate }) => {
   return (
     <button
       className={cx('wrap', className, [size], { selected }, { disabled }, { indeterminate })}
