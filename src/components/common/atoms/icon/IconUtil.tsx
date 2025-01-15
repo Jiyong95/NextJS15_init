@@ -2,11 +2,13 @@
 /**
  * @description icon추가시 아이콘안에 배경색이 있으면 fill을 추가하여 파일명을 작성한다.
  */
+import Check from '@svg/icon_check.svg';
 import CirCleCheck_fill from '@svg/icon_circle_check_fill.svg';
 import CircleError_fill from '@svg/icon_circle_error_fill.svg';
 import CircleInfo from '@svg/icon_circle_info.svg';
 import CircleInfo_fill from '@svg/icon_circle_info_fill.svg';
 import Close from '@svg/icon_close.svg';
+import Remove from '@svg/icon_remove.svg';
 
 import { IconProps } from '.';
 import { IconColors, IconColorType, IconSizeType } from './IconType';
@@ -18,6 +20,10 @@ export enum IconNameType {
   circleInfo = 'circleInfo',
   circleInfo_fill = 'circleInfo_fill',
   close = 'close',
+  check = 'check',
+
+  //R
+  remove = 'remove',
 }
 
 export const getElement = ({ name, size, fill, disabled }: IconProps) => {
@@ -32,6 +38,7 @@ export const getElement = ({ name, size, fill, disabled }: IconProps) => {
    * 불가능할 경우 추가 후 viewBox가 다르면 직접 입력
    */
   switch (name) {
+    // C
     case 'circleCheck_fill':
       return <CirCleCheck_fill {...svgProps} />;
     case 'circleError_fill':
@@ -42,6 +49,12 @@ export const getElement = ({ name, size, fill, disabled }: IconProps) => {
       return <CircleInfo_fill {...svgProps} />;
     case 'close':
       return <Close {...svgProps} />;
+    case 'check':
+      return <Check {...svgProps} />;
+
+    // R
+    case 'remove':
+      return <Remove {...svgProps} />;
   }
 };
 

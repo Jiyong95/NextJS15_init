@@ -26,6 +26,7 @@
     }
 
     &.default {
+      border-radius: $radius_M;
       background-color: $color_background_surface_default;
     }
   }

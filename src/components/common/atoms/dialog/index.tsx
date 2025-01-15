@@ -71,7 +71,7 @@ const Dialog = ({
   };
 
   const dialog = (
-    <Modal visible={true} dimmed={true} template={ModalTemplateType.dimmed}>
+    <Modal visible={true} dimmed={true} template={ModalTemplateType.none}>
       <div className={cx('wrapper')}>
         <div className={cx('titleArea')}>
           <Icon name={iconName} size={IconOption.size.M} fill={iconColor} />

@@ -6,6 +6,7 @@ import { useAdsMainBanners, useAdsMainBanners2 } from '@repository/ads/useAds';
 
 import Badge, { BadgeOption } from '@atoms/badge';
 import Button, { ButtonOption } from '@atoms/button';
+import Checkbox from '@atoms/checkbox';
 import Dialog from '@atoms/dialog';
 import Fennel, { useFennel } from '@atoms/fennel';
 import Icon, { IconOption } from '@atoms/icon';
@@ -27,7 +28,7 @@ const Test = () => {
   const { data } = useAdsMainBanners({
     enabled: false,
   });
-
+  const [selected, setSelected] = useState(false);
   console.log('data', data);
 
   const { mutateAsync } = useAdsMainBanners2();
@@ -158,6 +159,15 @@ const Test = () => {
           </Button>
         </div>
       </Modal>
+
+      <h1>체쿠박수</h1>
+      <Checkbox
+        selected={selected}
+        onClick={() => {
+          console.log('do');
+          setSelected(!selected);
+        }}
+      />
     </div>
   );
 };

@@ -1,0 +1,25 @@
+@use '@styles/common.scss' as *;
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: $radius_S;
+  border: 1px solid $color_border_default;
+
+  &:not(.selected, .indeterminate, .disabled) {
+    @include FillStyle($color_fill_neutral_subtle_default);
+  }
+
+  &:not(.disabled).selected,
+  &:not(.disabled).indeterminate {
+    @include FillStyle($color_fill_brand_strong_default);
+  }
+
+  &.disabled {
+    background-color: $color_background_disabled;
+    border-color: $color_border_disabled;
+  }
+}
