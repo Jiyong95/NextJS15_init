@@ -1,0 +1,75 @@
+@use '@styles/common.scss' as *;
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  //selected css
+  &.selected {
+    .slider {
+      @include FillStyle($color_fill_brand_strong_default);
+
+      &:before {
+        transform: translateY(-50%) translateX(20px);
+      }
+    }
+  }
+
+  //disabled css
+  &:disabled .slider {
+    background-color: $color_background_disabled;
+
+    &:hover {
+      background-color: $color_background_disabled;
+    }
+
+    &:before {
+      background-color: $C_GRAY_300;
+    }
+  }
+
+  .slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: $radius_L;
+    transition: background-color 0.2s ease-in-out;
+    @include FillStyle($color_fill_neutral_default);
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $C_GRAY_WHITE;
+      content: '';
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  // size M
+  &.M {
+    &.selected {
+      .slider {
+        &:before {
+          transform: translateY(-50%) translateX(16px);
+        }
+      }
+    }
+
+    .slider {
+      width: 32px;
+      height: 16px;
+
+      &:before {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}

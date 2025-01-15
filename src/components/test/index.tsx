@@ -11,6 +11,8 @@ import Dialog from '@atoms/dialog';
 import Fennel, { useFennel } from '@atoms/fennel';
 import Icon, { IconOption } from '@atoms/icon';
 import Modal from '@atoms/modal';
+import Switch from '@atoms/switch';
+import { SwitchSizeType } from '@atoms/switch/SwitchType';
 import Text, { TextOption } from '@atoms/text';
 import { useToast } from '@atoms/toast';
 
@@ -44,7 +46,11 @@ const Test = () => {
   const Toast = useToast();
 
   return (
-    <div className={cx('test')}>
+    <div
+      className={cx('test')}
+      style={{
+        backgroundColor: 'beige',
+      }}>
       <h1>scss</h1>
       <button className={cx('button')}>scssTest</button>
       <h1>Icon</h1>
@@ -53,7 +59,6 @@ const Test = () => {
       <h1>Button</h1>
       <Button
         type={ButtonOption.type.OutLine}
-        size={ButtonOption.size.M}
         fontStyle={ButtonOption.fontStyle.body_1_sb}
         color={ButtonOption.color.subtle}
         buttonProps={{
@@ -163,6 +168,31 @@ const Test = () => {
       <h1>체쿠박수</h1>
       <Checkbox
         selected={selected}
+        onClick={() => {
+          console.log('do');
+          setSelected(!selected);
+        }}
+      />
+      <Checkbox
+        disabled
+        selected={selected}
+        onClick={() => {
+          console.log('do');
+          setSelected(!selected);
+        }}
+      />
+
+      <h1>스위치</h1>
+      <Switch
+        selected={selected}
+        onClick={() => {
+          console.log('do');
+          setSelected(!selected);
+        }}
+      />
+      <Switch
+        selected={selected}
+        size={SwitchSizeType.M}
         onClick={() => {
           console.log('do');
           setSelected(!selected);
