@@ -11,6 +11,7 @@ import Dialog from '@atoms/dialog';
 import Fennel, { useFennel } from '@atoms/fennel';
 import Icon, { IconOption } from '@atoms/icon';
 import Modal from '@atoms/modal';
+import RadioGroup from '@atoms/radio';
 import Switch from '@atoms/switch';
 import { SwitchSizeType } from '@atoms/switch/SwitchType';
 import Text, { TextOption } from '@atoms/text';
@@ -27,11 +28,10 @@ const FennelItemss = ({ step }: { step: number }) => {
 };
 
 const Test = () => {
-  const { data } = useAdsMainBanners({
+  const {} = useAdsMainBanners({
     enabled: false,
   });
   const [selected, setSelected] = useState(false);
-  console.log('data', data);
 
   const { mutateAsync } = useAdsMainBanners2();
   const onClick = () => {
@@ -45,6 +45,9 @@ const Test = () => {
   const [test, setTest] = useState(false);
   const Toast = useToast();
 
+  const [radioValue, setRadioValue] = useState<string | undefined>('');
+
+  console.log('radio', radioValue);
   return (
     <div
       className={cx('test')}
@@ -198,6 +201,16 @@ const Test = () => {
           setSelected(!selected);
         }}
       />
+      <h1>Radio</h1>
+
+      <RadioGroup
+        value={radioValue}
+        onChange={(value) => {
+          setRadioValue(value);
+        }}>
+        <RadioGroup.Radio value={'1'} />
+        <RadioGroup.Radio value={'2'} />
+      </RadioGroup>
     </div>
   );
 };

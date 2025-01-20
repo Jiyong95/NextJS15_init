@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, Children, isValidElement, useContext, createContext } from 'react';
+import React, { ReactNode, useState, Children, isValidElement, useContext, createContext, FC } from 'react';
 
 interface FennelContextType {
   step: number;
@@ -36,7 +36,7 @@ interface FennelProps {
   children: ReactNode;
 }
 
-const Fennel = ({ startStep, layout: LayoutComponent, children }: FennelProps) => {
+const Fennel: FC<FennelProps> & { Item: typeof FennelItem } = ({ startStep, layout: LayoutComponent, children }) => {
   const [step, setStep] = useState(startStep ?? 0);
 
   const prevStep = () => setStep(Math.max(0, step - 1));

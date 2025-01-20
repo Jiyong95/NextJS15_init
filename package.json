@@ -11,7 +11,7 @@
     "build-storybook": "storybook build",
     "postinstall": "husky",
     "type-check": "npx tsc --noEmit",
-    "swagger-dv": "node ./swagger/script.js"
+    "swagger": "node ./swagger/script.js"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.16",
