@@ -11,7 +11,7 @@
   border-radius: $radius_S;
   background-color: $color_background_accent_gray_default;
   @include BoxShadow(300);
-  z-index: 9999;
+  z-index: $z_index_Max;
   animation:
     fadeIn 0.5s ease-out forwards,
     fadeOut 0.5s ease-in forwards;
