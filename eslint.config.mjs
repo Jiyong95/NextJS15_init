@@ -2,6 +2,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import importPlugin from 'eslint-plugin-import';
+import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,12 +30,28 @@ const eslintConfig = [
     ],
     plugins: {
       import: importPlugin,
+      'unused-imports': unusedImportsPlugin,
     },
     rules: {
       // 기존 규칙
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
-
+      /**
+       * 안 쓰는 import 제거
+       * @docs https://github.com/sweepline/eslint-plugin-unused-imports#usage
+       */
+      // 사용되지 않는 변수 제거를 경고 대신 오류로 처리
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
+      ],
       // import/order 규칙 추가
       'import/order': [
         'error',
