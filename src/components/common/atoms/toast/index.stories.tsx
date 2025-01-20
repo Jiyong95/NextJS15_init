@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ToastDom, ToastProps } from '.';
+
 import { IconOption } from '@atoms/icon';
+
+import { ToastDom, ToastProps } from '.';
 
 /**TODO : useToast로 가져다쓰면 BASE_URL undefined발생. 환경 변수 설정해야함. */
 const meta = {

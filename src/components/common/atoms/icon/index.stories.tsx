@@ -1,11 +1,12 @@
-import Icon, { IconOption } from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-
-import { IconNameType } from './IconUtil';
-import { IconColorType } from './IconType';
 import { FC } from 'react';
+
+import Icon, { IconOption } from '.';
+import { IconColorType } from './IconType';
+import { IconNameType } from './IconUtil';
+
+import styles from './index.module.scss';
 const cx = classnames.bind(styles);
 
 interface IconObjType extends IconListProps {

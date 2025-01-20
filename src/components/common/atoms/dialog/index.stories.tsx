@@ -1,14 +1,17 @@
 import '@styles/reset.scss';
 import type { Meta, StoryObj } from '@storybook/react';
 import classnames from 'classnames/bind';
-import styles from './index.module.scss';
-import Text, { TextOption } from '@atoms/text';
-import { DialogProps } from '.';
 import { FC } from 'react';
-import Icon, { IconOption } from '@atoms/icon';
-import { IconNameType } from '@atoms/icon/IconUtil';
+
 import Button, { ButtonOption } from '@atoms/button';
+import Icon, { IconOption } from '@atoms/icon';
 import { IconColorType } from '@atoms/icon/IconType';
+import { IconNameType } from '@atoms/icon/IconUtil';
+import Text, { TextOption } from '@atoms/text';
+
+import { DialogProps } from '.';
+
+import styles from './index.module.scss';
 const cx = classnames.bind(styles);
 
 const Dialog: FC<DialogProps> = ({
