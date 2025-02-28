@@ -7,7 +7,11 @@ import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 
-export interface Props {
+export const SwitchOption = {
+  size: SwitchSizeType,
+};
+
+interface Props {
   className?: string;
   size?: SwitchSizeType;
   selected?: boolean;

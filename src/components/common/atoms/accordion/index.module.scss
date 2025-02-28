@@ -1,0 +1,21 @@
+@use '@styles/common.scss' as *;
+
+.title {
+  @include Flex($justify: space-between, $align: center);
+  width: 100%;
+}
+
+.content {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

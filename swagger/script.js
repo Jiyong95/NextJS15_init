@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { generateApi } = require('swagger-typescript-api');
 const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({ path: './.env.local' });
 
 generateApi({
   output: path.resolve(process.cwd(), './swagger/res'), // 출력 디렉터리 설정
-  url: 'https://api-jobda-im.kr-dv-jainwon.com/v3/api-docs/MATCHING%20API', // Swagger JSON URL
+  url: `https://api-jobda-im.kr-dv-jainwon.com${process.env.SWAGGER_URL}`, // Swagger JSON URL
   httpClientType: 'axios', // HTTP 클라이언트로 axios 사용
   modular: true, // 모듈식 파일 구조 활성화
   templates: path.resolve(process.cwd(), './swagger/templates'), // 수정된 템플릿 경로

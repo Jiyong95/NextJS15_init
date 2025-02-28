@@ -1,11 +1,6 @@
 @use '@styles/common.scss' as *;
 
 .button {
-  @include FillStyle($color_fill_accent_cobaltblue_default);
-  @include FontStyle($body_3_sb, $color_text_accent_gold_default);
-}
-
-.modalTest {
-  width: 400px;
-  height: 400px;
+  @include FillStyle($COLOR_FILL_ACCENT_COBALTBLUE_DEFAULT);
+  @include FontStyle($BODY_3_SB, $COLOR_TEXT_ACCENT_GOLD_DEFAULT);
 }

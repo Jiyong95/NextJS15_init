@@ -10,9 +10,9 @@ const meta = {
     layout: 'centered',
   },
   args: {
-    element: TextOption.element.p,
-    fontStyle: TextOption.fontStyle.body_1_b,
-    color: TextOption.color.brand,
+    element: TextOption.element.P,
+    fontStyle: TextOption.fontStyle.BODY_1_B,
+    color: TextOption.color.BRAND,
     children: 'text',
   },
   argTypes: {

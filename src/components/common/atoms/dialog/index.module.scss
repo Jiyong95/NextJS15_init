@@ -1,28 +1,22 @@
 @use '@styles/common.scss' as *;
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  border-radius: $radius_M;
-  background-color: $color_background_surface_default;
+  @include Flex($dir: column);
+  border-radius: $RADIUS_M;
+  background-color: $COLOR_BACKGROUND_SURFACE_DEFAULT;
   @include BoxShadow(300);
 
   .titleArea {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: $space_XL $space_XL $space_L $space_XL;
+    @include Flex($align: center, $gap: $SPACE_XS);
+    padding: $SPACE_XL $SPACE_XL $SPACE_L $SPACE_XL;
   }
 
   .descriptionArea {
-    padding: 0 $space_XL $space_XS;
+    padding: 0 $SPACE_XL $SPACE_XS;
   }
 
   .btnArea {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    padding: $space_L $space_XL;
+    @include Flex($align: center, $justify: flex-end, $gap: $SPACE_XS);
+    padding: $SPACE_L $SPACE_XL;
   }
 }

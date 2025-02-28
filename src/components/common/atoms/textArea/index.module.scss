@@ -1,0 +1,61 @@
+@use '@styles/common.scss' as *;
+
+.textArea {
+  width: 100%;
+  height: 98px;
+  padding: $SPACE_M;
+  border: 1px solid $COLOR_BORDER_DEFAULT;
+  border-radius: $RADIUS_M;
+  outline: none;
+  resize: none;
+  @include FontStyle($BODY_1_M, $COLOR_TEXT_DEFAULT);
+
+  &:not(:disabled) {
+    @include FillStyle($COLOR_FILL_NEUTRAL_SUBTLE_DEFAULT);
+  }
+
+  // disabled 상태 스타일
+  &:disabled {
+    background-color: $COLOR_BACKGROUND_DISABLED;
+    color: $COLOR_TEXT_DISABLED;
+
+    &::placeholder {
+      color: $COLOR_TEXT_DISABLED;
+    }
+  }
+
+  &:focus {
+    border-color: $COLOR_BORDER_STRONG !important;
+  }
+
+  &::placeholder {
+    @include FontStyle($BODY_1_M, $COLOR_TEXT_SUBTLE);
+  }
+
+  // 사이즈별 font 스타일링
+  &.S {
+    height: 76px;
+    padding: $SPACE_XXXS $SPACE_M;
+    @include FontStyle($BODY_2_SB, $COLOR_TEXT_DEFAULT);
+
+    &::placeholder {
+      @include FontStyle($BODY_2_SB, $COLOR_TEXT_SUBTLE);
+    }
+  }
+
+  &.M {
+    height: 84px;
+    padding: $SPACE_XS $SPACE_M;
+    @include FontStyle($BODY_2_M, $COLOR_TEXT_DEFAULT);
+
+    &::placeholder {
+      @include FontStyle($BODY_2_M, $COLOR_TEXT_SUBTLE);
+    }
+  }
+}
+
+.helperTextArea {
+  @include Flex($align: center, $justify: space-between);
+  margin-top: $SPACE_XXXS;
+  width: 100%;
+}

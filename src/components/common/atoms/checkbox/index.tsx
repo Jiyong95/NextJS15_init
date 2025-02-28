@@ -10,6 +10,13 @@ import styles from './index.module.scss';
 
 const cx = classNames.bind(styles);
 
+/* 아직 size에 대한 css 안정해졌음.
+  size props는 사용 x
+*/
+export const CheckboxOption = {
+  size: CheckboxSizeType,
+};
+
 interface Props {
   className?: string;
   size?: CheckboxSizeType;
@@ -27,9 +34,9 @@ const Checkbox: FC<Props> = ({ className, size = CheckboxSizeType.L, onClick, se
       disabled={disabled}>
       {(selected || indeterminate) && (
         <Icon
-          name={indeterminate ? IconOption.name.remove : IconOption.name.check}
+          name={indeterminate ? IconOption.name.REMOVE : IconOption.name.CHECK}
           size={IconOption.size.XS}
-          fill={disabled ? IconOption.fill.disabled : IconOption.fill.inverse}
+          fill={disabled ? IconOption.fill.DISABLED : IconOption.fill.INVERSE}
         />
       )}
     </button>

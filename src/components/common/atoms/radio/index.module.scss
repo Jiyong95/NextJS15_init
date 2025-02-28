@@ -6,8 +6,8 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  border-radius: $radius_CIRCULAR;
-  border: 1px solid $color_border_default;
+  border-radius: $RADIUS_CIRCULAR;
+  border: 1px solid $COLOR_BORDER_DEFAULT;
 
   &.M {
     width: 20px;
@@ -23,7 +23,7 @@
 
   &.selected {
     position: relative;
-    @include FillStyle($color_fill_brand_strong_default);
+    @include FillStyle($COLOR_FILL_BRAND_STRONG_DEFAULT);
     border: none;
 
     &::after {
@@ -33,22 +33,22 @@
       transform: translate(-50%, -50%);
       width: 15px;
       height: 15px;
-      border-radius: $radius_CIRCULAR;
-      background-color: $color_background_surface_default;
+      border-radius: $RADIUS_CIRCULAR;
+      background-color: $COLOR_BACKGROUND_SURFACE_DEFAULT;
       content: '';
     }
   }
 
   &:not(.selected, .disabled) {
-    @include FillStyle($color_fill_neutral_subtle_default);
+    @include FillStyle($COLOR_FILL_NEUTRAL_SUBTLE_DEFAULT);
   }
 
   &.disabled {
-    background-color: $color_background_disabled;
-    border-color: $color_border_disabled;
+    background-color: $COLOR_BACKGROUND_DISABLED;
+    border-color: $COLOR_BORDER_DISABLED;
 
     &.selected {
-      background-color: $color_border_strong;
+      background-color: $COLOR_BORDER_STRONG;
     }
   }
 }

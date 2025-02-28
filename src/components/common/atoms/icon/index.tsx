@@ -1,12 +1,7 @@
-import classnames from 'classnames/bind';
 import { FC } from 'react';
 
 import { IconColorType, IconSizeType } from './IconType';
 import { getElement, IconNameType } from './IconUtil';
-
-import styles from './index.module.scss';
-
-const cx = classnames.bind(styles);
 
 export const IconOption = {
   name: IconNameType,
@@ -16,7 +11,7 @@ export const IconOption = {
 
 export interface IconProps {
   name: IconNameType;
-  size: IconSizeType;
+  size?: IconSizeType;
   fill?: IconColorType;
   disabled?: boolean;
 }
@@ -29,7 +24,7 @@ export interface IconProps {
  */
 
 const Icon: FC<IconProps> = (props) => {
-  return <span className={cx('icon')}>{getElement(props)}</span>;
+  return getElement(props);
 };
 
 export default Icon;

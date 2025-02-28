@@ -1,0 +1,23 @@
+@use '../variables' as *;
+
+// 전체 영역 divider
+@mixin Divider($margin: 0px, $color: $COLOR_BORDER_STRONG) {
+  width: 100%;
+  margin: $margin 0;
+  border: 1px solid $color;
+}
+
+/* 텍스트 사이 영역 divider
+사용시 부모 요소에 position: relative; 필요합니다.
+*/
+@mixin InlineDivider($left: 0px, $height: 0px, $color: $COLOR_BORDER_DEFAULT) {
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: $left;
+    transform: translateY(-50%);
+    height: $height;
+    border: 1px solid $color;
+    content: '';
+  }
+}

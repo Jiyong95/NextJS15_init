@@ -4,51 +4,49 @@ import classnames from 'classnames/bind';
 import { FC } from 'react';
 
 import Button, { ButtonOption } from '@atoms/button';
-import Icon, { IconOption } from '@atoms/icon';
-import { IconColorType } from '@atoms/icon/IconType';
-import { IconNameType } from '@atoms/icon/IconUtil';
 import Text, { TextOption } from '@atoms/text';
 
-import { DialogProps } from '.';
+import { Props } from '.';
+import { DialogType } from './DialogType';
+import { getDialogIcon } from './DialogUtil';
 
 import styles from './index.module.scss';
+
 const cx = classnames.bind(styles);
 
-const Dialog: FC<DialogProps> = ({
-  iconName = IconNameType.circleError_fill,
-  title,
-  description,
-  iconColor = IconColorType.danger,
-  closeBtnProps,
-  confirmBtnProps,
-}) => {
+/**
+ * Modal Component는 따로 컨텐츠를 분리해서 렌더링해야함.
+ * StoryBook에서 이동시 Modal visible을 따로 컨트롤할 수 없음.
+ */
+
+const Dialog: FC<Props> = ({ type = DialogType.DEFAULT, title, description, closeBtnProps, confirmBtnProps }) => {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('titleArea')}>
-        <Icon name={iconName} size={IconOption.size.M} fill={iconColor} />
-        <Text fontStyle={TextOption.fontStyle.title_2_b} color={TextOption.color.default}>
+        {getDialogIcon(type)}
+        <Text fontStyle={TextOption.fontStyle.TITLE_2_B} color={TextOption.color.DEFAULT}>
           {title}
         </Text>
       </div>
       <div className={cx('descriptionArea')}>
-        <Text fontStyle={TextOption.fontStyle.body_1_m} color={TextOption.color.subtle}>
+        <Text fontStyle={TextOption.fontStyle.BODY_1_M} color={TextOption.color.SUBTLE}>
           {description}
         </Text>
       </div>
       <div className={cx('btnArea')}>
         <Button
-          type={ButtonOption.type.OutLine}
+          type={ButtonOption.type.OUTLINE}
           size={ButtonOption.size.M}
-          fontStyle={ButtonOption.fontStyle.body_1_sb}
-          color={ButtonOption.color.subtle}>
+          fontStyle={ButtonOption.fontStyle.BODY_1_SB}
+          color={ButtonOption.color.SUBTLE}>
           {closeBtnProps?.text}
         </Button>
         <Button
-          type={ButtonOption.type.Fill}
+          type={ButtonOption.type.FILL}
           size={ButtonOption.size.M}
-          fill={ButtonOption.fill.brand_strong_default}
-          fontStyle={ButtonOption.fontStyle.body_1_sb}
-          color={ButtonOption.color.inverse}>
+          fill={ButtonOption.fill.BRAND_STRONG_DEFAULT}
+          fontStyle={ButtonOption.fontStyle.BODY_1_SB}
+          color={ButtonOption.color.INVERSE}>
           {confirmBtnProps?.text}
         </Button>
       </div>
@@ -63,6 +61,7 @@ const meta = {
     layout: 'centered',
   },
   args: {
+    type: DialogType.DEFAULT,
     title: 'Dialog Title',
     description: 'Dialog Description',
     closeBtnProps: {
@@ -73,13 +72,9 @@ const meta = {
     },
   },
   argTypes: {
-    iconName: {
+    type: {
       control: 'select',
-      options: Object.keys(IconOption.name),
-    },
-    iconColor: {
-      control: 'select',
-      options: Object.keys(IconOption.fill),
+      options: Object.values(DialogType),
     },
   },
 } satisfies Meta<typeof Dialog>;

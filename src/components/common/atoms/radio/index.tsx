@@ -7,6 +7,10 @@ import styles from './index.module.scss';
 
 const cx = classNames.bind(styles);
 
+export const RadioOption = {
+  size: RadioSizeType,
+};
+
 interface RadioProps {
   className?: string;
   size?: RadioSizeType;

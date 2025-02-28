@@ -1,0 +1,16 @@
+/**
+사용방법
+  인자 생략하려면 다음과 같이 인자 이름을 지정해줘야함.
+  @include Flex($dir: column, $align: center);
+  인자 순서대로 사용할 경우 예)$dir: row, $justify: flex-start
+  => 인자명 생략 가능 @include Flex(column, center);
+**/
+
+@mixin Flex($dir: row, $justify: flex-start, $align: stretch, $gap: 0, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}

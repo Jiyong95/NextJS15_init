@@ -35,11 +35,11 @@ interface TextProps {
  */
 
 const Text = ({
-  element = TextElementType.p,
+  element = TextElementType.P,
   children,
   className,
-  fontStyle = FontStyleType.body_1_b,
-  color = TextColorType.default,
+  fontStyle = FontStyleType.BODY_1_B,
+  color = TextColorType.DEFAULT,
   styles,
   ellipsis,
 }: TextProps) => {

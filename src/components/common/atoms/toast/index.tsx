@@ -10,15 +10,19 @@ import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 
+export const ToastOption = {
+  iconName: IconNameType,
+};
+
 export interface ToastProps {
   iconName?: IconNameType;
   content: ReactNode;
 }
 
-export const ToastDom = ({ iconName = IconNameType.circleInfo_fill, content }: ToastProps) => (
+export const ToastDom = ({ iconName = IconNameType.CIRCLE_INFO_FILL, content }: ToastProps) => (
   <div className={cx('toastArea')}>
-    <Icon name={iconName} size={IconOption.size.S} fill={IconOption.fill.inverse} />
-    <Text fontStyle={TextOption.fontStyle.body_2_m} color={TextOption.color.inverse} styles={{ whiteSpace: 'nowrap' }}>
+    <Icon name={iconName} size={IconOption.size.S} fill={IconOption.fill.INVERSE} />
+    <Text className={cx('content')} fontStyle={TextOption.fontStyle.BODY_2_M} color={TextOption.color.INVERSE}>
       {content}
     </Text>
   </div>
@@ -32,7 +36,7 @@ const ToastContext = createContext<ToastContextProps | null>(null);
 
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
-  const [toastProps, setToastProps] = useState<ToastProps>({ iconName: IconNameType.circleInfo, content: '' });
+  const [toastProps, setToastProps] = useState<ToastProps>({ iconName: IconNameType.CIRCLE_INFO, content: '' });
   const toastTimer = useRef<NodeJS.Timeout | null>(null);
 
   const hide = () => {
@@ -60,10 +64,10 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <ToastContext.Provider value={{ showToast }}>
+    <ToastContext value={{ showToast }}>
       {children}
       {open && <ToastDom {...toastProps} />}
-    </ToastContext.Provider>
+    </ToastContext>
   );
 };
 

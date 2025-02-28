@@ -9,11 +9,11 @@ import { ButtonIconPositionType, ButtonSizeType, ButtonType } from './ButtonType
 export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: ButtonIconPositionType) => {
   switch (buttonType) {
     case ButtonSizeType.L:
-      if (iconPosition === ButtonIconPositionType.left) {
+      if (iconPosition === ButtonIconPositionType.LEFT) {
         return {
           padding: `${Space[SpaceType.M]}px ${Space[SpaceType.L]}px ${Space[SpaceType.M]}px ${Space[SpaceType.S]}px`,
         };
-      } else if (iconPosition === ButtonIconPositionType.right) {
+      } else if (iconPosition === ButtonIconPositionType.RIGHT) {
         return {
           padding: `${Space[SpaceType.M]}px ${Space[SpaceType.S]}px ${Space[SpaceType.M]}px ${Space[SpaceType.L]}px`,
         };
@@ -23,13 +23,13 @@ export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: 
         };
       }
     case ButtonSizeType.M:
-      if (iconPosition === ButtonIconPositionType.left) {
+      if (iconPosition === ButtonIconPositionType.LEFT) {
         return {
           padding: `${Space[SpaceType.XS]}px ${Space[SpaceType.M]}px ${Space[SpaceType.XS]}px ${
             Space[SpaceType.XXS]
           }px`,
         };
-      } else if (iconPosition === ButtonIconPositionType.right) {
+      } else if (iconPosition === ButtonIconPositionType.RIGHT) {
         return {
           padding: `${Space[SpaceType.XS]}px ${Space[SpaceType.XXS]}px ${Space[SpaceType.XS]}px ${
             Space[SpaceType.M]
@@ -41,13 +41,13 @@ export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: 
         };
       }
     case ButtonSizeType.S:
-      if (iconPosition === ButtonIconPositionType.left) {
+      if (iconPosition === ButtonIconPositionType.LEFT) {
         return {
           padding: `${Space[SpaceType.XXS]}px ${Space[SpaceType.XS]}px ${Space[SpaceType.XXS]}px ${
             Space[SpaceType.XXXS]
           }px`,
         };
-      } else if (iconPosition === ButtonIconPositionType.right) {
+      } else if (iconPosition === ButtonIconPositionType.RIGHT) {
         return {
           padding: `${Space[SpaceType.XXS]}px ${Space[SpaceType.XXXS]}px ${Space[SpaceType.XXS]}px ${
             Space[SpaceType.XS]
@@ -59,13 +59,13 @@ export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: 
         };
       }
     case ButtonSizeType.XS:
-      if (iconPosition === ButtonIconPositionType.left) {
+      if (iconPosition === ButtonIconPositionType.LEFT) {
         return {
           padding: `${Space[SpaceType.XXXS]}px ${Space[SpaceType.XXS]}px ${Space[SpaceType.XXXS]}px ${
             Space[SpaceType.XXXXS]
           }px`,
         };
-      } else if (iconPosition === ButtonIconPositionType.right) {
+      } else if (iconPosition === ButtonIconPositionType.RIGHT) {
         return {
           padding: `${Space[SpaceType.XXXS]}px ${Space[SpaceType.XXXXS]}px ${Space[SpaceType.XXXS]}px ${
             Space[SpaceType.XXS]
@@ -80,9 +80,9 @@ export const getButtonSpaceStyle = (buttonType?: ButtonSizeType, iconPosition?: 
 };
 
 export const getButtonBorderStyle = (buttonType: ButtonType) => {
-  if (buttonType === ButtonType.OutLine) {
+  if (buttonType === ButtonType.OUTLINE) {
     return {
-      border: `1px solid ${BorderColor.default}`,
+      border: `1px solid ${BorderColor.DEFAULT}`,
     };
   }
   return {};

@@ -1,6 +1,8 @@
-import DateUtil from '.';
 import type { Meta, StoryObj } from '@storybook/react';
+
 import UtilTemplate from '@utils/template';
+
+import DateUtil from '.';
 
 const meta = {
   title: 'Utils/date/util',

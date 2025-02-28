@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 // useClickAway 훅 정의
-function useClickAway(handler: () => void, ref: React.RefObject<HTMLElement>) {
+const useClickAway = (handler: () => void, ref: React.RefObject<HTMLElement>) => {
   useEffect(() => {
     // 이벤트 리스너: 클릭 이벤트가 발생하면 실행될 함수
     const listener = (event: MouseEvent) => {
@@ -20,6 +20,6 @@ function useClickAway(handler: () => void, ref: React.RefObject<HTMLElement>) {
       document.removeEventListener('click', listener);
     };
   }, [handler, ref]); // 의존성 배열에 handler와 ref를 추가하여, 이들이 변경될 때마다 효과를 다시 적용
-}
+};
 
 export default useClickAway;

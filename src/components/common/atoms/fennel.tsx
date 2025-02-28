@@ -65,7 +65,7 @@ const Fennel: FC<FennelProps> & { Item: typeof FennelItem } = ({ startStep, layo
     currentStepContent
   );
 
-  return <FennelContext.Provider value={{ step, prevStep, nextStep }}>{contentToRender}</FennelContext.Provider>;
+  return <FennelContext value={{ step, prevStep, nextStep }}>{contentToRender}</FennelContext>;
 };
 
 Fennel.Item = FennelItem;

@@ -16,7 +16,7 @@ const meta = {
     value: '1',
   },
   argTypes: {
-    size: { control: 'select', options: Object.keys(RadioSizeType) },
+    size: { control: 'select', options: Object.values(RadioSizeType) },
     selected: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },

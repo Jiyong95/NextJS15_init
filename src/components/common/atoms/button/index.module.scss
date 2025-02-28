@@ -6,28 +6,28 @@
   justify-content: center;
   text-align: center;
 
-  &.Fill {
+  &.FILL {
     &:disabled:not(.isLoading) {
-      background-color: $color_background_disabled !important;
-      color: $color_text_disabled !important;
+      background-color: $COLOR_BACKGROUND_DISABLED !important;
+      color: $COLOR_TEXT_DISABLED !important;
 
       &:hover {
-        background-color: $color_background_disabled !important;
+        background-color: $COLOR_BACKGROUND_DISABLED !important;
       }
 
       &:active {
-        background-color: $color_background_disabled !important;
+        background-color: $COLOR_BACKGROUND_DISABLED !important;
       }
     }
   }
 
   // fill에 border-color가 추가 되어야함.
   // 일단 하나의 타입에 대해서만 적용되어있음.
-  &.OutLine {
-    @include FillStyle($color_fill_neutral_subtle_default);
+  &.OUTLINE {
+    @include FillStyle($COLOR_FILL_NEUTRAL_SUBTLE_DEFAULT);
 
     &:disabled {
-      color: $color_text_disabled !important;
+      color: $COLOR_TEXT_DISABLED !important;
       background-color: unset !important;
 
       &:hover {
@@ -36,13 +36,13 @@
     }
   }
 
-  &.Text {
+  &.TEXT {
     &:not(:hover):not(:active) {
       background-color: unset !important; // hover, active가 아닐 때 배경 제거
     }
 
     &:disabled {
-      color: $color_text_disabled !important;
+      color: $COLOR_TEXT_DISABLED !important;
 
       &:hover {
         background-color: unset !important;
@@ -51,47 +51,47 @@
   }
 
   .inner {
-    display: flex;
-    align-items: center;
+    @include Flex($align: center);
   }
 
-  &.fill_brand_default {
-    background-color: $C_GREEN_25;
+  // Fill Style
+  &.COLOR_FILL_BRAND_DEFAULT {
+    background-color: $COLOR_GREEN_25;
     &:hover {
-      background-color: $C_GREEN_50;
+      background-color: $COLOR_GREEN_50;
     }
     &:active {
-      background-color: $C_GREEN_100;
+      background-color: $COLOR_GREEN_100;
     }
   }
-  &.fill_brand_subtle_default {
-    background-color: $C_GRAY_WHITE;
+  &.COLOR_FILL_BRAND_SUBTLE_DEFAULT {
+    background-color: $COLOR_GRAY_WHITE;
     &:hover {
-      background-color: $C_GREEN_25;
+      background-color: $COLOR_GREEN_25;
     }
     &:active {
-      background-color: $C_GREEN_50;
+      background-color: $COLOR_GREEN_50;
     }
   }
-  &.fill_brand_strong_default {
-    background-color: $C_GREEN_500;
+  &.COLOR_FILL_BRAND_STRONG_DEFAULT {
+    background-color: $COLOR_GREEN_500;
     &:hover {
-      background-color: $C_GREEN_600;
+      background-color: $COLOR_GREEN_600;
     }
     &:active {
-      background-color: $C_GREEN_700;
+      background-color: $COLOR_GREEN_700;
     }
   }
-  &.fill_neutral_default {
-    background-color: $C_GRAY_100;
+  &.COLOR_FILL_NEUTRAL_DEFAULT {
+    background-color: $COLOR_GRAY_100;
     &:hover {
-      background-color: $C_GRAY_200;
+      background-color: $COLOR_GRAY_200;
     }
     &:active {
-      background-color: $C_GRAY_300;
+      background-color: $COLOR_GRAY_300;
     }
   }
-  &.fill_neutral_subtle_default {
+  &.COLOR_FILL_NEUTRAL_SUBTLE_DEFAULT {
     background-color: rgba(51, 52, 54, 0);
     &:hover {
       background-color: rgba(51, 52, 54, 0.05);
@@ -100,319 +100,319 @@
       background-color: rgba(51, 52, 54, 0.08);
     }
   }
-  &.fill_neutral_strong_default {
-    background-color: $C_GRAY_500;
+  &.COLOR_FILL_NEUTRAL_STRONG_DEFAULT {
+    background-color: $COLOR_GRAY_500;
     &:hover {
-      background-color: $C_GRAY_600;
+      background-color: $COLOR_GRAY_600;
     }
     &:active {
-      background-color: $C_GRAY_700;
+      background-color: $COLOR_GRAY_700;
     }
   }
-  &.fill_success_default {
-    background-color: $C_GREEN_25;
+  &.COLOR_FILL_SUCCESS_DEFAULT {
+    background-color: $COLOR_GREEN_25;
     &:hover {
-      background-color: $C_GREEN_50;
+      background-color: $COLOR_GREEN_50;
     }
     &:active {
-      background-color: $C_GREEN_100;
+      background-color: $COLOR_GREEN_100;
     }
   }
-  &.fill_success_strong_default {
-    background-color: $C_GREEN_500;
+  &.COLOR_FILL_SUCCESS_STRONG_DEFAULT {
+    background-color: $COLOR_GREEN_500;
     &:hover {
-      background-color: $C_GREEN_600;
+      background-color: $COLOR_GREEN_600;
     }
     &:active {
-      background-color: $C_GREEN_700;
+      background-color: $COLOR_GREEN_700;
     }
   }
-  &.fill_danger_default {
-    background-color: $C_RED_25;
+  &.COLOR_FILL_DANGER_DEFAULT {
+    background-color: $COLOR_RED_25;
     &:hover {
-      background-color: $C_RED_50;
+      background-color: $COLOR_RED_50;
     }
     &:active {
-      background-color: $C_RED_100;
+      background-color: $COLOR_RED_100;
     }
   }
-  &.fill_danger_strong_default {
-    background-color: $C_RED_500;
+  &.COLOR_FILL_DANGER_STRONG_DEFAULT {
+    background-color: $COLOR_RED_500;
     &:hover {
-      background-color: $C_RED_600;
+      background-color: $COLOR_RED_600;
     }
     &:active {
-      background-color: $C_RED_700;
+      background-color: $COLOR_RED_700;
     }
   }
-  &.fill_warning_default {
-    background-color: $C_YELLOW_25;
+  &.COLOR_FILL_WARNING_DEFAULT {
+    background-color: $COLOR_YELLOW_25;
     &:hover {
-      background-color: $C_YELLOW_50;
+      background-color: $COLOR_YELLOW_50;
     }
     &:active {
-      background-color: $C_YELLOW_100;
+      background-color: $COLOR_YELLOW_100;
     }
   }
-  &.fill_warning_strong_default {
-    background-color: $C_YELLOW_500;
+  &.COLOR_FILL_WARNING_STRONG_DEFAULT {
+    background-color: $COLOR_YELLOW_500;
     &:hover {
-      background-color: $C_YELLOW_600;
+      background-color: $COLOR_YELLOW_600;
     }
     &:active {
-      background-color: $C_YELLOW_700;
+      background-color: $COLOR_YELLOW_700;
     }
   }
-  &.fill_information_default {
-    background-color: $C_SKYBLUE_25;
+  &.COLOR_FILL_INFORMATION_DEFAULT {
+    background-color: $COLOR_SKYBLUE_25;
     &:hover {
-      background-color: $C_SKYBLUE_50;
+      background-color: $COLOR_SKYBLUE_50;
     }
     &:active {
-      background-color: $C_SKYBLUE_100;
+      background-color: $COLOR_SKYBLUE_100;
     }
   }
-  &.fill_information_strong_default {
-    background-color: $C_SKYBLUE_500;
+  &.COLOR_FILL_INFORMATION_STRONG_DEFAULT {
+    background-color: $COLOR_SKYBLUE_500;
     &:hover {
-      background-color: $C_SKYBLUE_600;
+      background-color: $COLOR_SKYBLUE_600;
     }
     &:active {
-      background-color: $C_SKYBLUE_700;
+      background-color: $COLOR_SKYBLUE_700;
     }
   }
-  &.fill_accent_default {
-    background-color: $C_GREEN_25;
+  &.COLOR_FILL_ACCENT_DEFAULT {
+    background-color: $COLOR_GREEN_25;
     &:hover {
-      background-color: $C_GREEN_50;
+      background-color: $COLOR_GREEN_50;
     }
     &:active {
-      background-color: $C_GREEN_100;
+      background-color: $COLOR_GREEN_100;
     }
   }
-  &.fill_accent_green_default {
-    background-color: $C_GREEN_25;
+  &.COLOR_FILL_ACCENT_GREEN_DEFAULT {
+    background-color: $COLOR_GREEN_25;
     &:hover {
-      background-color: $C_GREEN_50;
+      background-color: $COLOR_GREEN_50;
     }
     &:active {
-      background-color: $C_GREEN_100;
+      background-color: $COLOR_GREEN_100;
     }
   }
-  &.fill_accent_green_strong_default {
-    background-color: $C_GREEN_500;
+  &.COLOR_FILL_ACCENT_GREEN_STRONG_DEFAULT {
+    background-color: $COLOR_GREEN_500;
     &:hover {
-      background-color: $C_GREEN_600;
+      background-color: $COLOR_GREEN_600;
     }
     &:active {
-      background-color: $C_GREEN_700;
+      background-color: $COLOR_GREEN_700;
     }
   }
-  &.fill_accent_springgreen_default {
-    background-color: $C_SPRINGGREEN_25;
+  &.COLOR_FILL_ACCENT_SPRINGGREEN_DEFAULT {
+    background-color: $COLOR_SPRINGGREEN_25;
     &:hover {
-      background-color: $C_SPRINGGREEN_50;
+      background-color: $COLOR_SPRINGGREEN_50;
     }
     &:active {
-      background-color: $C_SPRINGGREEN_100;
+      background-color: $COLOR_SPRINGGREEN_100;
     }
   }
-  &.fill_accent_springgreen_strong_default {
-    background-color: $C_SPRINGGREEN_500;
+  &.COLOR_FILL_ACCENT_SPRINGGREEN_STRONG_DEFAULT {
+    background-color: $COLOR_SPRINGGREEN_500;
     &:hover {
-      background-color: $C_SPRINGGREEN_600;
+      background-color: $COLOR_SPRINGGREEN_600;
     }
     &:active {
-      background-color: $C_SPRINGGREEN_700;
+      background-color: $COLOR_SPRINGGREEN_700;
     }
   }
-  &.fill_accent_olivegreen_default {
-    background-color: $C_OLIVEGREEN_25;
+  &.COLOR_FILL_ACCENT_OLIVEGREEN_DEFAULT {
+    background-color: $COLOR_OLIVEGREEN_25;
     &:hover {
-      background-color: $C_OLIVEGREEN_50;
+      background-color: $COLOR_OLIVEGREEN_50;
     }
     &:active {
-      background-color: $C_OLIVEGREEN_100;
+      background-color: $COLOR_OLIVEGREEN_100;
     }
   }
-  &.fill_accent_olivegreen_strong_default {
-    background-color: $C_OLIVEGREEN_500;
+  &.COLOR_FILL_ACCENT_OLIVEGREEN_STRONG_DEFAULT {
+    background-color: $COLOR_OLIVEGREEN_500;
     &:hover {
-      background-color: $C_OLIVEGREEN_600;
+      background-color: $COLOR_OLIVEGREEN_600;
     }
     &:active {
-      background-color: $C_OLIVEGREEN_700;
+      background-color: $COLOR_OLIVEGREEN_700;
     }
   }
-  &.fill_accent_yellow_default {
-    background-color: $C_YELLOW_25;
+  &.COLOR_FILL_ACCENT_YELLOW_DEFAULT {
+    background-color: $COLOR_YELLOW_25;
     &:hover {
-      background-color: $C_YELLOW_50;
+      background-color: $COLOR_YELLOW_50;
     }
     &:active {
-      background-color: $C_YELLOW_100;
+      background-color: $COLOR_YELLOW_100;
     }
   }
-  &.fill_accent_yellow_strong_default {
-    background-color: $C_YELLOW_500;
+  &.COLOR_FILL_ACCENT_YELLOW_STRONG_DEFAULT {
+    background-color: $COLOR_YELLOW_500;
     &:hover {
-      background-color: $C_YELLOW_600;
+      background-color: $COLOR_YELLOW_600;
     }
     &:active {
-      background-color: $C_YELLOW_700;
+      background-color: $COLOR_YELLOW_700;
     }
   }
-  &.fill_accent_gold_default {
-    background-color: $C_GOLD_25;
+  &.COLOR_FILL_ACCENT_GOLD_DEFAULT {
+    background-color: $COLOR_GOLD_25;
     &:hover {
-      background-color: $C_GOLD_50;
+      background-color: $COLOR_GOLD_50;
     }
     &:active {
-      background-color: $C_GOLD_100;
+      background-color: $COLOR_GOLD_100;
     }
   }
-  &.fill_accent_gold_strong_default {
-    background-color: $C_GOLD_500;
+  &.COLOR_FILL_ACCENT_GOLD_STRONG_DEFAULT {
+    background-color: $COLOR_GOLD_500;
     &:hover {
-      background-color: $C_GOLD_600;
+      background-color: $COLOR_GOLD_600;
     }
     &:active {
-      background-color: $C_GOLD_700;
+      background-color: $COLOR_GOLD_700;
     }
   }
-  &.fill_accent_orange_default {
-    background-color: $C_ORANGE_25;
+  &.COLOR_FILL_ACCENT_ORANGE_DEFAULT {
+    background-color: $COLOR_ORANGE_25;
     &:hover {
-      background-color: $C_ORANGE_50;
+      background-color: $COLOR_ORANGE_50;
     }
     &:active {
-      background-color: $C_ORANGE_100;
+      background-color: $COLOR_ORANGE_100;
     }
   }
-  &.fill_accent_orange_strong_default {
-    background-color: $C_ORANGE_500;
+  &.COLOR_FILL_ACCENT_ORANGE_STRONG_DEFAULT {
+    background-color: $COLOR_ORANGE_500;
     &:hover {
-      background-color: $C_ORANGE_600;
+      background-color: $COLOR_ORANGE_600;
     }
     &:active {
-      background-color: $C_ORANGE_700;
+      background-color: $COLOR_ORANGE_700;
     }
   }
-  &.fill_accent_red_default {
-    background-color: $C_RED_25;
+  &.COLOR_FILL_ACCENT_RED_DEFAULT {
+    background-color: $COLOR_RED_25;
     &:hover {
-      background-color: $C_RED_50;
+      background-color: $COLOR_RED_50;
     }
     &:active {
-      background-color: $C_RED_100;
+      background-color: $COLOR_RED_100;
     }
   }
-  &.fill_accent_red_strong_default {
-    background-color: $C_RED_500;
+  &.COLOR_FILL_ACCENT_RED_STRONG_DEFAULT {
+    background-color: $COLOR_RED_500;
     &:hover {
-      background-color: $C_RED_600;
+      background-color: $COLOR_RED_600;
     }
     &:active {
-      background-color: $C_RED_700;
+      background-color: $COLOR_RED_700;
     }
   }
-  &.fill_accent_pink_default {
-    background-color: $C_PINK_25;
+  &.COLOR_FILL_ACCENT_PINK_DEFAULT {
+    background-color: $COLOR_PINK_25;
     &:hover {
-      background-color: $C_PINK_50;
+      background-color: $COLOR_PINK_50;
     }
     &:active {
-      background-color: $C_PINK_100;
+      background-color: $COLOR_PINK_100;
     }
   }
-  &.fill_accent_pink_strong_default {
-    background-color: $C_PINK_500;
+  &.COLOR_FILL_ACCENT_PINK_STRONG_DEFAULT {
+    background-color: $COLOR_PINK_500;
     &:hover {
-      background-color: $C_PINK_600;
+      background-color: $COLOR_PINK_600;
     }
     &:active {
-      background-color: $C_PINK_700;
+      background-color: $COLOR_PINK_700;
     }
   }
-  &.fill_accent_purple_default {
-    background-color: $C_PURPLE_25;
+  &.COLOR_FILL_ACCENT_PURPLE_DEFAULT {
+    background-color: $COLOR_PURPLE_25;
     &:hover {
-      background-color: $C_PURPLE_50;
+      background-color: $COLOR_PURPLE_50;
     }
     &:active {
-      background-color: $C_PURPLE_100;
+      background-color: $COLOR_PURPLE_100;
     }
   }
-  &.fill_accent_purple_strong_default {
-    background-color: $C_PURPLE_500;
+  &.COLOR_FILL_ACCENT_PURPLE_STRONG_DEFAULT {
+    background-color: $COLOR_PURPLE_500;
     &:hover {
-      background-color: $C_PURPLE_600;
+      background-color: $COLOR_PURPLE_600;
     }
     &:active {
-      background-color: $C_PURPLE_700;
+      background-color: $COLOR_PURPLE_700;
     }
   }
-  &.fill_accent_violet_default {
-    background-color: $C_VIOLET_25;
+  &.COLOR_FILL_ACCENT_VIOLET_DEFAULT {
+    background-color: $COLOR_VIOLET_25;
     &:hover {
-      background-color: $C_VIOLET_50;
+      background-color: $COLOR_VIOLET_50;
     }
     &:active {
-      background-color: $C_VIOLET_100;
+      background-color: $COLOR_VIOLET_100;
     }
   }
-  &.fill_accent_violet_strong_default {
-    background-color: $C_VIOLET_500;
+  &.COLOR_FILL_ACCENT_VIOLET_STRONG_DEFAULT {
+    background-color: $COLOR_VIOLET_500;
     &:hover {
-      background-color: $C_VIOLET_600;
+      background-color: $COLOR_VIOLET_600;
     }
     &:active {
-      background-color: $C_VIOLET_700;
+      background-color: $COLOR_VIOLET_700;
     }
   }
-  &.fill_accent_cobaltblue_default {
-    background-color: $C_COBALTBLUE_25;
+  &.COLOR_FILL_ACCENT_COBALTBLUE_DEFAULT {
+    background-color: $COLOR_COBALTBLUE_25;
     &:hover {
-      background-color: $C_COBALTBLUE_50;
+      background-color: $COLOR_COBALTBLUE_50;
     }
     &:active {
-      background-color: $C_COBALTBLUE_100;
+      background-color: $COLOR_COBALTBLUE_100;
     }
   }
-  &.fill_accent_cobaltblue_strong_default {
-    background-color: $C_COBALTBLUE_500;
+  &.COLOR_FILL_ACCENT_COBALTBLUE_STRONG_DEFAULT {
+    background-color: $COLOR_COBALTBLUE_500;
     &:hover {
-      background-color: $C_COBALTBLUE_600;
+      background-color: $COLOR_COBALTBLUE_600;
     }
     &:active {
-      background-color: $C_COBALTBLUE_700;
+      background-color: $COLOR_COBALTBLUE_700;
     }
   }
-  &.fill_accent_skyblue_default {
-    background-color: $C_SKYBLUE_25;
+  &.COLOR_FILL_ACCENT_SKYBLUE_DEFAULT {
+    background-color: $COLOR_SKYBLUE_25;
     &:hover {
-      background-color: $C_SKYBLUE_50;
+      background-color: $COLOR_SKYBLUE_50;
     }
     &:active {
-      background-color: $C_SKYBLUE_100;
+      background-color: $COLOR_SKYBLUE_100;
     }
   }
-  &.fill_accent_skyblue_strong_default {
-    background-color: $C_SKYBLUE_500;
+  &.COLOR_FILL_ACCENT_SKYBLUE_STRONG_DEFAULT {
+    background-color: $COLOR_SKYBLUE_500;
     &:hover {
-      background-color: $C_SKYBLUE_600;
+      background-color: $COLOR_SKYBLUE_600;
     }
     &:active {
-      background-color: $C_SKYBLUE_700;
+      background-color: $COLOR_SKYBLUE_700;
     }
   }
-  &.fill_accent_cyan_default {
-    background-color: $C_CYAN_25;
+  &.COLOR_FILL_ACCENT_CYAN_DEFAULT {
+    background-color: $COLOR_CYAN_25;
     &:hover {
-      background-color: $C_CYAN_50;
+      background-color: $COLOR_CYAN_50;
     }
     &:active {
-      background-color: $C_CYAN_100;
+      background-color: $COLOR_CYAN_100;
     }
   }
 }
@@ -424,7 +424,7 @@
   border: 2px solid;
   border-radius: 50%;
   animation: button-anim 0.7s linear infinite;
-  border-color: $C_GRAY_WHITE;
+  border-color: $COLOR_GRAY_WHITE;
   border-right-color: transparent !important;
 }
 

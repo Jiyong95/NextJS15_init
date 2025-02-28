@@ -4,7 +4,9 @@ import { useState } from 'react';
 
 import { useAdsMainBanners, useAdsMainBanners2 } from '@repository/ads/useAds';
 
-import Badge, { BadgeOption } from '@atoms/badge';
+import Accordion from '@atoms/accordion';
+import BadgeContent, { BadgeContentOption } from '@atoms/badge/content';
+import Badge, { BadgeOption } from '@atoms/badge/index';
 import Button, { ButtonOption } from '@atoms/button';
 import Checkbox from '@atoms/checkbox';
 import Dialog from '@atoms/dialog';
@@ -15,7 +17,11 @@ import RadioGroup from '@atoms/radio';
 import Switch from '@atoms/switch';
 import { SwitchSizeType } from '@atoms/switch/SwitchType';
 import Text, { TextOption } from '@atoms/text';
+import TextArea from '@atoms/textArea';
+import TextField from '@atoms/textField';
+import { TextFieldSizeType } from '@atoms/textField/TextFieldType';
 import { useToast } from '@atoms/toast';
+import Profile from '@components/matchingProfile/content/profile';
 
 import styles from './index.module.scss';
 
@@ -44,44 +50,39 @@ const Test = () => {
 
   const [test, setTest] = useState(false);
   const Toast = useToast();
-
   const [radioValue, setRadioValue] = useState<string | undefined>('');
 
-  console.log('radio', radioValue);
   return (
-    <div
-      className={cx('test')}
-      style={{
-        backgroundColor: 'beige',
-      }}>
+    <div className={cx('test')}>
       <h1>scss</h1>
       <button className={cx('button')}>scssTest</button>
       <h1>Icon</h1>
-      <Icon name={IconOption.name.circleInfo_fill} size={IconOption.size.XL} fill={IconOption.fill.accent_red} />
-      <Icon name={IconOption.name.circleInfo_fill} size={IconOption.size.XL} fill={IconOption.fill.default} disabled />
+      <Icon name={IconOption.name.CIRCLE_INFO_FILL} size={IconOption.size.XL} fill={IconOption.fill.ACCENT_RED} />
+      <Icon name={IconOption.name.CIRCLE_INFO_FILL} size={IconOption.size.XL} fill={IconOption.fill.DEFAULT} disabled />
       <h1>Button</h1>
       <Button
-        type={ButtonOption.type.OutLine}
-        fontStyle={ButtonOption.fontStyle.body_1_sb}
-        color={ButtonOption.color.subtle}
+        type={ButtonOption.type.FILL}
+        fill={ButtonOption.fill.ACCENT_COBALTBLUE_DEFAULT}
+        fontStyle={ButtonOption.fontStyle.BODY_1_SB}
+        color={ButtonOption.color.SUBTLE}
         buttonProps={{
           onClick,
         }}>
         아웃라인
       </Button>
       <Button
-        fontStyle={ButtonOption.fontStyle.body_1_b}
-        fill={ButtonOption.fill.accent_orange_strong_default}
-        iconName={ButtonOption.iconName.circleInfo_fill}
-        iconPosition={ButtonOption.iconPosition.right}
+        fontStyle={ButtonOption.fontStyle.BODY_1_B}
+        fill={ButtonOption.fill.ACCENT_ORANGE_STRONG_DEFAULT}
+        iconName={ButtonOption.iconName.CIRCLE_INFO_FILL}
+        iconPosition={ButtonOption.iconPosition.RIGHT}
         buttonProps={{
           onClick: () => setTest(!test),
         }}>
         모달버튼
       </Button>
       <Button
-        fontStyle={ButtonOption.fontStyle.body_1_b}
-        fill={ButtonOption.fill.accent_gold_strong_default}
+        fontStyle={ButtonOption.fontStyle.BODY_1_B}
+        fill={ButtonOption.fill.ACCENT_GOLD_STRONG_DEFAULT}
         buttonProps={{
           onClick: () => {
             Dialog({
@@ -99,8 +100,8 @@ const Test = () => {
         Dialog버튼
       </Button>
       <Button
-        fontStyle={ButtonOption.fontStyle.body_1_b}
-        fill={ButtonOption.fill.accent_gold_strong_default}
+        fontStyle={ButtonOption.fontStyle.BODY_1_B}
+        fill={ButtonOption.fill.ACCENT_GOLD_STRONG_DEFAULT}
         buttonProps={{
           onClick: () => {
             Toast({
@@ -113,22 +114,23 @@ const Test = () => {
       </Button>
       <h1>Text</h1>
       <Text
-        fontStyle={TextOption.fontStyle.body_1_b}
-        color={TextOption.color.default}
+        fontStyle={TextOption.fontStyle.BODY_1_B}
+        color={TextOption.color.DEFAULT}
         ellipsis={3}
         styles={{ width: 40 }}>
         텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트
       </Text>
       <h1>Badge</h1>
-      <Badge backgroundColor={BadgeOption.backgroundColor.accent_cyan_default}>뱃지</Badge>
+      <BadgeContent backgroundColor={BadgeContentOption.backgroundColor.ACCENT_CYAN_DEFAULT}>뱃지</BadgeContent>
 
       <h1>Fennel</h1>
       <Fennel>
         <Fennel.Item>
           <FennelItemss step={1} />
-          <Icon name={IconOption.name.circleInfo} size={IconOption.size.S} fill={IconOption.fill.accent_pink} />
+          <Icon name={IconOption.name.CIRCLE_INFO} size={IconOption.size.S} fill={IconOption.fill.ACCENT_PINK} />
         </Fennel.Item>
         <Fennel.Item>
+          <div>이건나오냐</div>
           <FennelItemss step={2} />
         </Fennel.Item>
         <Fennel.Item>
@@ -144,26 +146,21 @@ const Test = () => {
       </Fennel>
 
       <Modal visible={test} dimmed clickBg={() => setTest(!test)} onClose={() => setTest(!test)}>
-        <div className={cx('modalTest')}>
+        <div>
+          <h1>모달</h1>
+          <Modal.ScrollArea maxHeight={400}>
+            <h1>모달 스크롤 영역</h1>
+            <Profile />
+          </Modal.ScrollArea>
           <Button
-            fontStyle={ButtonOption.fontStyle.body_1_b}
-            fill={ButtonOption.fill.accent_gold_strong_default}
-            iconName={ButtonOption.iconName.circleError_fill}
-            iconPosition={ButtonOption.iconPosition.left}
+            type={ButtonOption.type.FILL}
+            fill={ButtonOption.fill.ACCENT_COBALTBLUE_DEFAULT}
+            fontStyle={ButtonOption.fontStyle.BODY_1_SB}
+            color={ButtonOption.color.SUBTLE}
             buttonProps={{
-              onClick: () => {
-                setTest(!test);
-              },
+              onClick,
             }}>
-            버튼
-          </Button>
-          <Button
-            fontStyle={ButtonOption.fontStyle.body_1_b}
-            fill={ButtonOption.fill.accent_gold_strong_default}
-            buttonProps={{
-              disabled: true,
-            }}>
-            버튼
+            아웃라인
           </Button>
         </div>
       </Modal>
@@ -211,8 +208,54 @@ const Test = () => {
         <RadioGroup.Radio value={'1'} />
         <RadioGroup.Radio value={'2'} />
       </RadioGroup>
+
+      <h1>TextField</h1>
+      <TextField helperText={'기본입니다.'} />
+      <TextField helperText={'기본입니다.'} searchIcon isSuccess size={TextFieldSizeType.S} />
+
+      <h1>TextArea</h1>
+      <TextArea textAreaOptions={{ maxLength: 100 }} helperText='안녕하ㅔ요' />
+
+      <Accordion initialOpen>
+        <Accordion.Title>Click to Toggle</Accordion.Title>
+        <Accordion.Content>
+          <Button
+            fontStyle={ButtonOption.fontStyle.BODY_1_B}
+            fill={ButtonOption.fill.ACCENT_GOLD_STRONG_DEFAULT}
+            buttonProps={{
+              onClick: () => {
+                Toast({
+                  content:
+                    '토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트토스트',
+                });
+              },
+            }}>
+            토스트버튼
+          </Button>{' '}
+        </Accordion.Content>
+      </Accordion>
+
+      <Badge type={BadgeOption.type.NEW} />
+
+      <Button
+        fontStyle={ButtonOption.fontStyle.BODY_1_B}
+        fill={ButtonOption.fill.ACCENT_GOLD_STRONG_DEFAULT}
+        buttonProps={{
+          onClick: update,
+          debounce: 1000,
+        }}>
+        디바운스 버튼
+      </Button>
     </div>
   );
 };
 
 export default Test;
+
+// 업데이트 함수 - 성공
+const update = (): Promise<boolean> => {
+  return new Promise((resolve) => {
+    console.log('do');
+    resolve(true);
+  });
+};

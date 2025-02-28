@@ -4,6 +4,7 @@ import React from 'react';
 
 import { FillColorType } from '@constant/styles/color/FillColorType';
 import { FontStyle, FontStyleType } from '@constant/styles/FontStyleType';
+import useDebounce from '@hooks/useDebounce';
 
 import { IconColorType } from '@atoms/icon/IconType';
 import { IconNameType } from '@atoms/icon/IconUtil';
@@ -28,8 +29,12 @@ export const ButtonOption = {
   iconColor: IconColorType,
 };
 
-interface aPropsType extends LinkProps {
-  target?: string;
+interface customAPropsType extends LinkProps {
+  target?: React.HTMLAttributeAnchorTarget;
+}
+
+interface customButtomPropsType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  debounce?: number;
 }
 
 interface Props {
@@ -43,9 +48,8 @@ interface Props {
   iconPosition?: ButtonIconPositionType;
   iconColor?: IconColorType;
   isLoading?: boolean;
-  aProps?: aPropsType;
-  buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
-  styles?: React.CSSProperties;
+  aProps?: customAPropsType;
+  buttonProps?: customButtomPropsType;
   children?: React.ReactNode;
 }
 
@@ -62,24 +66,22 @@ interface Props {
  * @param {string} [iconColor] - 아이콘 색상.
  * @param {string} [fill] - 버튼 색상.
  * @param {boolean} [isLoading] - 버튼 로딩 여부.
- * @param {React.CSSProperties} [styles] - 추가 인라인 스타일.
  */
 
 const Button = ({
   children,
   className,
-  type = ButtonType.Fill,
+  type = ButtonType.FILL,
   size = ButtonSizeType.L,
   aProps,
   buttonProps,
-  fontStyle = FontStyleType.body_1_b,
-  color = TextColorType.default,
+  fontStyle = FontStyleType.BODY_1_B,
+  color = TextColorType.DEFAULT,
   iconName,
   iconPosition,
   iconColor,
   fill,
   isLoading,
-  styles,
 }: Props) => {
   const style = {
     ...FontStyle[fontStyle],
@@ -87,18 +89,22 @@ const Button = ({
     ...getButtonRadiusStyle(size),
     ...getButtonSpaceStyle(size, iconPosition),
     ...getButtonBorderStyle(type),
-    ...styles,
   };
+
+  // 버튼 클릭 디바운스 처리
+  const handleButtonClick = useDebounce((e: React.MouseEvent<HTMLButtonElement>) => {
+    buttonProps?.onClick?.(e);
+  }, buttonProps?.debounce || 500);
 
   if (aProps) {
     return (
       <Link className={cx('button', className, type, fill)} {...aProps} style={style}>
         <div className={cx('inner')}>
-          {iconName && iconPosition === 'left' && (
+          {iconName && iconPosition === ButtonIconPositionType.LEFT && (
             <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} />
           )}
           {children}
-          {iconName && iconPosition === 'right' && (
+          {iconName && iconPosition === ButtonIconPositionType.RIGHT && (
             <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} />
           )}
         </div>
@@ -112,15 +118,16 @@ const Button = ({
         isLoading,
       })}
       {...buttonProps}
+      onClick={handleButtonClick}
       disabled={buttonProps?.disabled || isLoading}
       type={buttonProps?.type}
       style={style}>
       <div className={cx('inner')}>
-        {iconName && iconPosition === 'left' && (
+        {iconName && iconPosition === ButtonIconPositionType.LEFT && (
           <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} disabled={buttonProps?.disabled} />
         )}
         {isLoading ? <span className={cx('spinner')} style={{ borderColor: TextColor[color] }} /> : children}
-        {iconName && iconPosition === 'right' && (
+        {iconName && iconPosition === ButtonIconPositionType.RIGHT && (
           <Icon name={iconName} size={getButtonIconSize(size)} fill={iconColor} disabled={buttonProps?.disabled} />
         )}
       </div>

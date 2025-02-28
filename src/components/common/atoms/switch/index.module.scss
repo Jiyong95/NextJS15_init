@@ -9,7 +9,7 @@
   //selected css
   &.selected {
     .slider {
-      @include FillStyle($color_fill_brand_strong_default);
+      @include FillStyle($COLOR_FILL_BRAND_STRONG_DEFAULT);
 
       &:before {
         transform: translateY(-50%) translateX(20px);
@@ -19,14 +19,14 @@
 
   //disabled css
   &:disabled .slider {
-    background-color: $color_background_disabled;
+    background-color: $COLOR_BACKGROUND_DISABLED;
 
     &:hover {
-      background-color: $color_background_disabled;
+      background-color: $COLOR_BACKGROUND_DISABLED;
     }
 
     &:before {
-      background-color: $C_GRAY_300;
+      background-color: $COLOR_GRAY_300;
     }
   }
 
@@ -34,9 +34,9 @@
     position: relative;
     width: 40px;
     height: 20px;
-    border-radius: $radius_L;
+    border-radius: $RADIUS_L;
     transition: background-color 0.2s ease-in-out;
-    @include FillStyle($color_fill_neutral_default);
+    @include FillStyle($COLOR_FILL_NEUTRAL_DEFAULT);
 
     &:before {
       position: absolute;
@@ -46,7 +46,7 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: $C_GRAY_WHITE;
+      background-color: $COLOR_GRAY_WHITE;
       content: '';
       transition: transform 0.2s ease-in-out;
     }

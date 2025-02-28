@@ -15,7 +15,7 @@ const meta = {
     disabled: false,
   },
   argTypes: {
-    size: { control: 'select', options: Object.keys(SwitchSizeType) },
+    size: { control: 'select', options: Object.values(SwitchSizeType) },
     selected: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },

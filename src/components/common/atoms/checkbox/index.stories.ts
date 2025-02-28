@@ -16,7 +16,7 @@ const meta = {
     indeterminate: false,
   },
   argTypes: {
-    size: { control: 'select', options: Object.keys(CheckboxSizeType) },
+    size: { control: 'select', options: Object.values(CheckboxSizeType) },
     selected: { control: 'boolean' },
     disabled: { control: 'boolean' },
     indeterminate: { control: 'boolean' },

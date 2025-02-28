@@ -1,0 +1,61 @@
+@use '@styles/common.scss' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: $RADIUS_CIRCULAR;
+
+  // DOT 타입
+  &.DOT {
+    padding: $SPACE_XXS;
+
+    &.BRAND {
+      span {
+        background-color: $COLOR_BACKGROUND_ACCENT_GREEN_DEFAULT;
+      }
+    }
+
+    &.RED {
+      span {
+        background-color: $COLOR_BACKGROUND_ACCENT_RED_DEFAULT;
+      }
+    }
+
+    span {
+      width: 4px;
+      height: 4px;
+      border-radius: $RADIUS_CIRCULAR;
+    }
+  }
+
+  // NUMBER 타입
+  &.NUMBER {
+    min-width: 16px;
+    min-height: 16px;
+    padding: 1px 4px;
+
+    &.BRAND {
+      background-color: $COLOR_BACKGROUND_ACCENT_GREEN_DEFAULT;
+    }
+
+    &.RED {
+      background-color: $COLOR_BACKGROUND_ACCENT_RED_DEFAULT;
+    }
+  }
+
+  // NEW 타입
+  &.NEW {
+    width: 16px;
+    height: 16px;
+
+    &.BRAND {
+      background-color: $COLOR_BACKGROUND_ACCENT_GREEN_DEFAULT;
+    }
+
+    &.RED {
+      background-color: $COLOR_BACKGROUND_ACCENT_RED_DEFAULT;
+    }
+  }
+}

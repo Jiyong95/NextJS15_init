@@ -1,0 +1,37 @@
+@use '../variables' as *;
+
+// 스크롤 X,Y 방향
+@mixin scroll {
+  $SCROLL_BAR_COLOR: $COLOR_GRAY_400;
+  overflow: auto;
+
+  // scrollbar트랙
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  // scrollbar
+  &::-webkit-scrollbar-thumb {
+    background-color: $SCROLL_BAR_COLOR;
+    border-radius: $RADIUS_M;
+  }
+}
+
+// 스크롤 Y 방향
+@mixin scrollY {
+  $SCROLL_BAR_COLOR: $COLOR_GRAY_400;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  // scrollbar트랙
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  // scrollbar
+  &::-webkit-scrollbar-thumb {
+    background-color: $SCROLL_BAR_COLOR;
+    border-radius: $RADIUS_M;
+  }
+}

@@ -4,19 +4,21 @@
   position: fixed;
   left: 50%;
   bottom: 0;
-  display: flex;
-  align-items: center;
-  gap: $space_XXS;
-  padding: $space_M $space_L;
-  border-radius: $radius_S;
-  background-color: $color_background_accent_gray_default;
+  @include Flex($dir: row, $align: center, $gap: $SPACE_XXS);
+  padding: $SPACE_M $SPACE_L;
+  border-radius: $RADIUS_S;
+  background-color: $COLOR_BACKGROUND_ACCENT_GRAY_DEFAULT;
   @include BoxShadow(300);
-  z-index: $z_index_Max;
+  z-index: $Z_INDEX_TOOLTIP;
   animation:
     fadeIn 0.5s ease-out forwards,
     fadeOut 0.5s ease-in forwards;
   animation-delay: 0s, 2.5s;
   transform: translate(-50%, 0);
+
+  .content {
+    white-space: nowrap;
+  }
 }
 
 @keyframes fadeIn {

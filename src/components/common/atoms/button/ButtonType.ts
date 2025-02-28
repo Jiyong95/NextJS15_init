@@ -1,7 +1,7 @@
 export enum ButtonType {
-  Fill = 'Fill',
-  OutLine = 'OutLine',
-  Text = 'Text',
+  FILL = 'FILL',
+  OUTLINE = 'OUTLINE',
+  TEXT = 'TEXT',
 }
 
 export enum ButtonSizeType {
@@ -12,6 +12,6 @@ export enum ButtonSizeType {
 }
 
 export enum ButtonIconPositionType {
-  left = 'left',
-  right = 'right',
+  LEFT = 'LEFT',
+  RIGHT = 'RIGHT',
 }

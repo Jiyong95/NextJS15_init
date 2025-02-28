@@ -14,18 +14,14 @@
 // storybook css
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-gap: 10px;
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  @include Flex($dir: column, $align: center, $justify: center, $gap: $SPACE_XS);
   min-width: 100px;
   padding: 20px;
-  border: 1px solid $color_border_default;
+  border: 1px solid $COLOR_BORDER_DEFAULT;
   border-radius: 20px;
 }

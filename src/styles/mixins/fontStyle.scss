@@ -1,0 +1,185 @@
+@use '../variables' as *;
+
+@mixin FontStyle($TYPE: $BODY_1_M, $TEXT_COLOR: $COLOR_TEXT_DEFAULT) {
+  color: $TEXT_COLOR;
+
+  @if $TYPE == $DISPLAY_1_B {
+    $fontSize: 64px;
+    font-size: $fontSize;
+    font-weight: 700;
+    line-height: 82px;
+    letter-spacing: $fontSize * -0.01;
+  } @else if $TYPE == $DISPLAY_1_SB {
+    $fontSize: 64px;
+    font-size: $fontSize;
+    font-weight: 600;
+    line-height: 82px;
+    letter-spacing: $fontSize * -0.01;
+  } @else if $TYPE == $DISPLAY_2_B {
+    $fontSize: 56px;
+    font-size: $fontSize;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: $fontSize * -0.01;
+  } @else if $TYPE == $DISPLAY_2_SB {
+    $fontSize: 56px;
+    font-size: $fontSize;
+    font-weight: 600;
+    line-height: 72px;
+    letter-spacing: $fontSize * -0.01;
+  } @else if $TYPE == $DISPLAY_3_B {
+    $fontSize: 48px;
+    font-size: $fontSize;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: $fontSize * -0.01;
+  } @else if $TYPE == $DISPLAY_3_SB {
+    $fontSize: 48px;
+    font-size: $fontSize;
+    font-weight: 600;
+    line-height: 60px;
+  } @else if $TYPE == $HEADING_1_B {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px;
+  } @else if $TYPE == $HEADING_1_SB {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+  } @else if $TYPE == $HEADING_1_M {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+  } @else if $TYPE == $HEADING_2_B {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+  } @else if $TYPE == $HEADING_2_SB {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+  } @else if $TYPE == $HEADING_2_M {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+  } @else if $TYPE == $HEADING_3_B {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 38px;
+  } @else if $TYPE == $HEADING_3_SB {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+  } @else if $TYPE == $HEADING_3_M {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 38px;
+  } @else if $TYPE == $TITLE_1_B {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  } @else if $TYPE == $TITLE_1_SB {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  } @else if $TYPE == $TITLE_1_M {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+  } @else if $TYPE == $TITLE_2_B {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+  } @else if $TYPE == $TITLE_2_SB {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  } @else if $TYPE == $TITLE_2_M {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+  } @else if $TYPE == $TITLE_3_B {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  } @else if $TYPE == $TITLE_3_SB {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  } @else if $TYPE == $TITLE_3_M {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+  } @else if $TYPE == $BODY_1_B {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  } @else if $TYPE == $BODY_1_SB {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  } @else if $TYPE == $BODY_1_M {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  } @else if $TYPE == $BODY_2_B {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+  } @else if $TYPE == $BODY_2_SB {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+  } @else if $TYPE == $BODY_2_M {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+  } @else if $TYPE == $BODY_3_B {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+  } @else if $TYPE == $BODY_3_SB {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+  } @else if $TYPE == $BODY_3_M {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+  } @else if $TYPE == $CAPTION_1_SB {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+  } @else if $TYPE == $CAPTION_1_M {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  } @else if $TYPE == $CAPTION_2_SB {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+  } @else if $TYPE == $CAPTION_2_M {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+}
+
+@mixin ellipsis($LINE: 1, $LINE_HEIGHT: 1.2em) {
+  @if ($LINE == 1) {
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $LINE;
+    -webkit-box-orient: vertical;
+    height: fit-content; // webkit 이외의 브라우저 대응
+    line-height: $LINE_HEIGHT;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}

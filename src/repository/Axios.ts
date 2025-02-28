@@ -11,13 +11,13 @@ interface ApiErrorRs<T extends string = string> {
 const getBaseUrl = (env: typeof process.env.NEXT_PUBLIC_ENV) => {
   switch (env) {
     case 'staging':
-      return 'https://api-matching-curation.ats.kr-st-jainwon.com';
+      return 'st';
     case 'staging2':
-      return 'https://api-matching-curation.ats.kr-st2-jainwon.com';
+      return 'st2';
     case 'production':
-      return 'https://api-matching-curation.ats.kr-pr-jainwon.com';
+      return 'pr';
     case 'development':
-      return 'https://api-jobda-im.kr-dv-jainwon.com';
+      return 'dv';
   }
 };
 

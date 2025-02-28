@@ -6,20 +6,20 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  border-radius: $radius_S;
-  border: 1px solid $color_border_default;
+  border-radius: $RADIUS_S;
+  border: 1px solid $COLOR_BORDER_DEFAULT;
 
   &:not(.selected, .indeterminate, .disabled) {
-    @include FillStyle($color_fill_neutral_subtle_default);
+    @include FillStyle($COLOR_FILL_NEUTRAL_SUBTLE_DEFAULT);
   }
 
   &:not(.disabled).selected,
   &:not(.disabled).indeterminate {
-    @include FillStyle($color_fill_brand_strong_default);
+    @include FillStyle($COLOR_FILL_BRAND_STRONG_DEFAULT);
   }
 
   &.disabled {
-    background-color: $color_background_disabled;
-    border-color: $color_border_disabled;
+    background-color: $COLOR_BACKGROUND_DISABLED;
+    border-color: $COLOR_BORDER_DISABLED;
   }
 }

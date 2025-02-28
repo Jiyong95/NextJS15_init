@@ -1,14 +1,12 @@
-@forward './variables/backgroundColor.scss';
-@forward './variables/borderColor.scss';
-@forward './variables/boxshadow.scss';
-@forward './variables/colors.scss';
-@forward './variables//fill.scss';
-@forward './variables/font.scss';
-@forward './variables/opacity.scss';
-@forward './variables/radius.scss';
-@forward './variables/space.scss';
-@forward './variables/textColor.scss';
+@forward './variables';
+@forward './mixins/';
 
-// z-index 값은 여기서 관리.
-$z_index_Max: 9999;
-$z_index_Component: 1;
+// z-index 값.
+$Z_INDEX_BASE: 9;
+$Z_INDEX_MODAL: 99;
+$Z_INDEX_TOOLTIP: 999;
+
+// 공통 스타일링.
+.hidden {
+  display: none;
+}

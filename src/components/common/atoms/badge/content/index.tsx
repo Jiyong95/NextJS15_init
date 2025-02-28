@@ -7,16 +7,16 @@ import { FontStyle, FontStyleType } from '@constant/styles/FontStyleType';
 
 import { TextColor, TextColorType } from '@atoms/text/TextType';
 
-import { BadgeSizeType, BadgeType } from './BadgeType';
-import { getBadgeBorderStyle, getBadgeRadiusStyle, getBadgeSpaceStyle } from './BadgeUtil';
+import { BadgeContentSizeType, BadgeContentType } from './BadgeContentType';
+import { getBadgeContentBorderStyle, getBadgeConetentRadiusStyle, getBadgeContentSpaceStyle } from './BadgeContentUtil';
 
 import styles from './index.module.scss';
 
 const cx = classnames.bind(styles);
 
-export const BadgeOption = {
-  type: BadgeType,
-  size: BadgeSizeType,
+export const BadgeContentOption = {
+  type: BadgeContentType,
+  size: BadgeContentSizeType,
   fontStyle: FontStyleType,
   color: TextColorType,
   backgroundColor: BackgroundColorType,
@@ -25,13 +25,12 @@ export const BadgeOption = {
 
 interface Props {
   className?: string;
-  type?: BadgeType;
-  size?: BadgeSizeType;
+  type?: BadgeContentType;
+  size?: BadgeContentSizeType;
   fontStyle?: FontStyleType;
   color?: TextColorType;
   backgroundColor?: BackgroundColorType;
   borderColor?: BorderColorType;
-  styles?: React.CSSProperties;
   children?: React.ReactNode;
 }
 
@@ -43,28 +42,25 @@ interface Props {
  * @param {TextColorType} [color] - 폰트 색상 타입.
  * @param {BackgroundColorType} [backgroundColor] - 뱃지 배경색.
  * @param {BorderColorType} [borderColor] - 뱃지 border 컬러.
- * @param {React.CSSProperties} [styles] - 추가 인라인 스타일.
  */
 
-const Badge: FC<Props> = ({
+const BadgeContent: FC<Props> = ({
   className,
-  type = BadgeType.Fill,
-  size = BadgeSizeType.L,
-  fontStyle = FontStyleType.body_1_b,
-  color = TextColorType.default,
-  backgroundColor = BackgroundColorType.surface_default,
+  type = BadgeContentType.FILL,
+  size = BadgeContentSizeType.L,
+  fontStyle = FontStyleType.BODY_1_B,
+  color = TextColorType.DEFAULT,
+  backgroundColor = BackgroundColorType.SURFACE_DEFAULT,
   borderColor,
-  styles,
   children,
 }) => {
   const style = {
     ...FontStyle[fontStyle],
     color: TextColor[color],
     backgroundColor: backgroundColor ? BackgroundColor[backgroundColor] : undefined,
-    ...getBadgeBorderStyle(type, borderColor),
-    ...getBadgeRadiusStyle(size),
-    ...getBadgeSpaceStyle(size),
-    ...styles,
+    ...getBadgeContentBorderStyle(type, borderColor),
+    ...getBadgeConetentRadiusStyle(size),
+    ...getBadgeContentSpaceStyle(size),
   };
 
   return (
@@ -74,4 +70,4 @@ const Badge: FC<Props> = ({
   );
 };
 
-export default Badge;
+export default BadgeContent;
